@@ -1,0 +1,258 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* ------------------------------------------------------------------
+   Haroon Marble design tokens
+   Brand palette (from the logo): charcoal, gold, marble ivory, white, grey.
+   Gold is an accent only. For gold *text* on light backgrounds use
+   gold-deep, which meets WCAG AA (5.4:1); plain gold is reserved for
+   fills, rules and text on charcoal (6.3:1).
+------------------------------------------------------------------- */
+:root {
+  --brand-charcoal: #1c252d;
+  --brand-charcoal-soft: #26313b;
+  --brand-gold: #c5a052;
+  --brand-gold-deep: #7d5f1f;
+  --brand-ivory: #f7f5f0;
+  --brand-stone: #ece8df;
+  --brand-white: #ffffff;
+  --brand-grey: #6b7280;
+  --brand-grey-ink: #5b6270;
+  --brand-mist: #b9c0c7;
+
+  /* shadcn/ui semantic tokens mapped onto the brand palette */
+  --background: var(--brand-ivory);
+  --foreground: var(--brand-charcoal);
+  --card: var(--brand-white);
+  --card-foreground: var(--brand-charcoal);
+  --popover: var(--brand-white);
+  --popover-foreground: var(--brand-charcoal);
+  --primary: var(--brand-charcoal);
+  --primary-foreground: var(--brand-ivory);
+  --secondary: var(--brand-stone);
+  --secondary-foreground: var(--brand-charcoal);
+  --muted: var(--brand-stone);
+  --muted-foreground: var(--brand-grey-ink);
+  --accent: var(--brand-stone);
+  --accent-foreground: var(--brand-charcoal);
+  --destructive: #b42318;
+  --border: #ddd7cb;
+  --input: #cfc8ba;
+  --ring: var(--brand-gold-deep);
+  --radius: 0.25rem;
+
+  --header-height: 4.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-charcoal: var(--brand-charcoal);
+  --color-charcoal-soft: var(--brand-charcoal-soft);
+  --color-gold: var(--brand-gold);
+  --color-gold-deep: var(--brand-gold-deep);
+  --color-ivory: var(--brand-ivory);
+  --color-stone: var(--brand-stone);
+  --color-grey: var(--brand-grey);
+  --color-mist: var(--brand-mist);
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-cormorant), Georgia, serif;
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-urdu: var(--font-nastaliq), "Noto Nastaliq Urdu", serif;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-rise: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-padding-top: calc(var(--header-height) + 1rem);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--brand-gold);
+    color: var(--brand-charcoal);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+  .on-dark :focus-visible,
+  .on-dark:focus-visible {
+    outline-color: var(--brand-gold);
+  }
+
+  /* ---------------- Urdu (RTL) typography ----------------
+     Nastaliq needs generous line height and no letter-spacing or
+     uppercase transforms, which would break the joined script.
+     Scoped to html[lang="ur"] so the "اردو" switcher label on English
+     pages does not trigger a download of the Urdu web font. */
+  html[lang="ur"] body {
+    font-family: var(--font-urdu);
+    line-height: 2.1;
+  }
+  html[lang="ur"] h1,
+  html[lang="ur"] h2,
+  html[lang="ur"] h3,
+  html[lang="ur"] h4 {
+    font-family: var(--font-urdu);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.9;
+  }
+  html[lang="ur"] :is(.font-display, .font-sans, .font-heading):not([lang="en"], [lang="en"] *) {
+    font-family: var(--font-urdu);
+  }
+  html[lang="ur"] [class*="tracking-"]:not([lang="en"], [lang="en"] *) {
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+  }
+  /* Latin-only fragments (brand name, phone, email) keep the Latin face. */
+  html[lang="ur"] [lang="en"],
+  html[lang="ur"] .font-latin {
+    font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 82rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2.5rem;
+    }
+  }
+  .tracking-eyebrow {
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .gold-rule {
+    display: block;
+    height: 1px;
+    width: 3rem;
+    background: var(--brand-gold);
+  }
+  .prose-article {
+    max-width: 68ch;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+  .prose-article h2 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin-top: 2.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-article p + p {
+    margin-top: 1.1rem;
+  }
+  .prose-article ul {
+    margin-top: 1rem;
+    padding-inline-start: 1.25rem;
+    list-style: disc;
+  }
+  .prose-article li + li {
+    margin-top: 0.5rem;
+  }
+  .prose-article li::marker {
+    color: var(--brand-gold-deep);
+  }
+  html[lang="ur"] .prose-article {
+    font-size: 1.125rem;
+    line-height: 2.3;
+  }
+  html[lang="ur"] .prose-article h2 {
+    line-height: 1.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Urdu line-height overrides. These are deliberately unlayered so they
+   outrank Tailwind's text-* and leading-* utilities, which set Latin-
+   oriented line heights that make Nastaliq lines collide. Latin
+   fragments (lang="en") keep their original metrics.
+------------------------------------------------------------------- */
+html[lang="ur"] body :not([lang="en"], [lang="en"] *, svg, svg *) {
+  line-height: 2;
+}
+html[lang="ur"] :is(h1, h2, h3, h4):not([lang="en"]) {
+  line-height: 1.75;
+}
+html[lang="ur"] h1:not([lang="en"]) {
+  font-size: clamp(1.9rem, 1.2rem + 2.4vw, 3.3rem);
+}
+html[lang="ur"] .text-xs:not([lang="en"], [lang="en"] *) {
+  font-size: 0.8125rem;
+}

@@ -1,0 +1,286 @@
+// Blog articles. Content blocks: { h2 }, { p }, { ul: [...] }.
+//
+// sample: true marks starter articles written for the launch. They show a short
+// "editorial sample" notice until Haroon Marble has reviewed and approved them.
+// TODO(client): review each article, then set sample: false.
+
+export const blogCategories = [
+  { id: "choosing", label: { en: "Choosing materials", ur: "مٹیریل کا انتخاب" } },
+  { id: "care", label: { en: "Care & maintenance", ur: "دیکھ بھال" } },
+  { id: "planning", label: { en: "Planning", ur: "منصوبہ بندی" } },
+];
+
+export const blogPosts = [
+  {
+    slug: "choose-marble-for-your-home",
+    sample: true,
+    category: "choosing",
+    published: "2026-10-14",
+    readingMinutes: 6,
+    cover: "marbleGold",
+    title: { en: "How to Choose Marble for Your Home", ur: "اپنے گھر کے لیے ماربل کا انتخاب کیسے کریں" },
+    excerpt: {
+      en: "Colour, veining, finish and where the stone will live: a practical way to narrow down the right marble for each room.",
+      ur: "رنگ، دھاریاں، فنش اور پتھر کہاں لگے گا: ہر کمرے کے لیے درست ماربل چننے کا عملی طریقہ۔",
+    },
+    content: {
+      en: [
+        { p: "Marble is chosen with the eyes, but it should be confirmed with questions. A stone that looks perfect in a showroom can disappoint in a busy kitchen, while a modest-looking slab can be ideal for a hallway. These steps help you choose with confidence." },
+        { h2: "Start with the room, not the slab" },
+        { p: "Ask how the space is used before falling for a colour. Entrances and corridors take grit and constant footfall. Kitchens see acidic spills such as lemon, vinegar and tomato. Bathrooms are wet and need grip underfoot. Living rooms and feature walls are gentler and give you the most freedom." },
+        { h2: "Understand colour and veining" },
+        { p: "White marbles with soft grey veins create a calm, bright look and suit smaller rooms. Gold or brown veining adds warmth. Dark marbles feel dramatic but show dust and water marks more easily on floors. Strong, bold veining makes a statement and is often best kept to one surface, such as an island or a feature wall, so the room does not feel busy." },
+        { p: "Because marble is natural, every slab is different. Always look at the actual material, or clear photos of it, rather than a small sample alone." },
+        { h2: "Pick the right finish" },
+        {
+          ul: [
+            "Polished: glossy and reflective, shows the colour and veining at their richest. Best for walls and low-traffic floors.",
+            "Honed: smooth and matt, hides small scratches and is less slippery. A sensible choice for busy floors and bathrooms.",
+            "Textured (brushed or leathered): more grip and a natural feel, useful for wet areas and outdoor steps.",
+          ],
+        },
+        { h2: "Think about care from day one" },
+        { p: "Marble is porous and sensitive to acids. A good sealer slows down staining but does not make the stone stain-proof. If you want a low-maintenance surface for a hard-working kitchen counter, discuss whether marble is right there, or whether to use it on a splashback or feature area instead." },
+        { h2: "Plan the layout before you buy" },
+        { p: "Measuring the site and planning the layout in 2D or 3D shows how veins will flow across the room, where cuts will fall and how much material you actually need. It also lets you decide where the most beautiful pieces should go." },
+        { h2: "A quick checklist" },
+        {
+          ul: [
+            "Where will the marble go, and how hard will that area be used?",
+            "Do you want a calm look or a bold statement?",
+            "Which finish suits the safety and maintenance needs of the room?",
+            "Have you seen the actual material, not only a small sample?",
+            "Has the layout been planned from real site measurements?",
+          ],
+        },
+        { p: "If you would like help working through these questions for your own space, contact Haroon Marble and share a few photos of the area." },
+      ],
+      ur: [
+        { p: "ماربل آنکھوں سے پسند کیا جاتا ہے مگر اس کی تصدیق سوالات سے ہونی چاہیے۔ شو روم میں بہترین لگنے والا پتھر مصروف کچن میں مایوس کر سکتا ہے، جبکہ سادہ دکھنے والا سلیب راہداری کے لیے بہترین ہو سکتا ہے۔ یہ اقدامات آپ کو اعتماد کے ساتھ انتخاب میں مدد دیں گے۔" },
+        { h2: "سلیب سے نہیں، کمرے سے شروع کریں" },
+        { p: "رنگ پسند کرنے سے پہلے پوچھیں کہ جگہ کیسے استعمال ہوتی ہے۔ داخلی راستے اور راہداریاں مٹی اور مسلسل آمد و رفت برداشت کرتی ہیں۔ کچن میں لیموں، سرکہ اور ٹماٹر جیسی تیزابی چیزیں گرتی ہیں۔ باتھ روم گیلے ہوتے ہیں اور فرش پر گرفت چاہیے۔ رہنے کے کمرے اور نمایاں دیواریں نسبتاً نرم استعمال میں ہوتی ہیں اور زیادہ آزادی دیتی ہیں۔" },
+        { h2: "رنگ اور دھاریوں کو سمجھیں" },
+        { p: "ہلکی سرمئی دھاریوں والا سفید ماربل پُرسکون اور روشن تاثر دیتا ہے اور چھوٹے کمروں کے لیے موزوں ہے۔ سنہری یا بھوری دھاریاں گرمائش لاتی ہیں۔ گہرے رنگ کا ماربل شاندار لگتا ہے مگر فرش پر دھول اور پانی کے نشان زیادہ دکھاتا ہے۔ نمایاں اور گہری دھاریاں ایک بیان کی طرح ہوتی ہیں، انہیں عموماً ایک ہی سطح جیسے آئی لینڈ یا نمایاں دیوار تک رکھنا بہتر ہے تاکہ کمرہ بھرا بھرا نہ لگے۔" },
+        { p: "چونکہ ماربل قدرتی ہے، ہر سلیب مختلف ہوتا ہے۔ صرف چھوٹے نمونے کے بجائے ہمیشہ اصل مٹیریل یا اس کی واضح تصاویر دیکھیں۔" },
+        { h2: "درست فنش کا انتخاب" },
+        {
+          ul: [
+            "پالش: چمکدار اور عکس دار، رنگ اور دھاریاں بھرپور دکھاتا ہے۔ دیواروں اور کم آمد و رفت والے فرش کے لیے بہترین۔",
+            "ہونڈ: ہموار اور میٹ، چھوٹی خراشیں چھپاتا ہے اور کم پھسلن والا ہے۔ مصروف فرش اور باتھ روم کے لیے سمجھدار انتخاب۔",
+            "کھردرا (برشڈ یا لیدرڈ): زیادہ گرفت اور قدرتی احساس، گیلی جگہوں اور باہر کی سیڑھیوں کے لیے مفید۔",
+          ],
+        },
+        { h2: "پہلے دن سے دیکھ بھال کا سوچیں" },
+        { p: "ماربل مسام دار ہوتا ہے اور تیزاب سے متاثر ہوتا ہے۔ اچھا سیلر داغ لگنے کی رفتار کم کرتا ہے مگر پتھر کو مکمل داغ پروف نہیں بناتا۔ اگر آپ مصروف کچن کاؤنٹر کے لیے کم دیکھ بھال والی سطح چاہتے ہیں تو بات کریں کہ وہاں ماربل مناسب ہے یا اسے دیوار یا نمایاں حصے پر استعمال کرنا بہتر ہوگا۔" },
+        { h2: "خریدنے سے پہلے لے آؤٹ کی منصوبہ بندی" },
+        { p: "سائٹ کی پیمائش اور 2D یا 3D میں لے آؤٹ بنانے سے پتہ چلتا ہے کہ دھاریاں کمرے میں کیسے بہیں گی، کٹنگ کہاں ہوگی اور اصل میں کتنا مٹیریل چاہیے۔ اس سے یہ بھی طے ہوتا ہے کہ سب سے خوبصورت ٹکڑے کہاں لگنے چاہییں۔" },
+        { h2: "مختصر چیک لسٹ" },
+        {
+          ul: [
+            "ماربل کہاں لگے گا اور وہ جگہ کتنی استعمال ہوگی؟",
+            "آپ پُرسکون تاثر چاہتے ہیں یا نمایاں انداز؟",
+            "کون سا فنش کمرے کی حفاظت اور دیکھ بھال کی ضروریات کے مطابق ہے؟",
+            "کیا آپ نے صرف چھوٹا نمونہ نہیں بلکہ اصل مٹیریل دیکھا ہے؟",
+            "کیا لے آؤٹ اصل سائٹ کی پیمائش سے بنایا گیا ہے؟",
+          ],
+        },
+        { p: "اگر آپ اپنی جگہ کے لیے ان سوالات پر مدد چاہتے ہیں تو ہارون ماربل سے رابطہ کریں اور جگہ کی چند تصاویر شیئر کریں۔" },
+      ],
+    },
+  },
+  {
+    slug: "marble-vs-porcelain-tiles",
+    sample: true,
+    category: "choosing",
+    published: "2026-10-14",
+    readingMinutes: 5,
+    cover: "floorPolishedMarble",
+    title: { en: "Marble vs. Porcelain Tiles: Key Differences", ur: "ماربل بمقابلہ پورسلین ٹائلز: اہم فرق" },
+    excerpt: {
+      en: "Natural stone or a manufactured tile that looks like it? How the two compare on looks, durability, maintenance and installation.",
+      ur: "قدرتی پتھر یا اس جیسی دکھنے والی تیار شدہ ٹائل؟ دونوں کا موازنہ: شکل، پائیداری، دیکھ بھال اور تنصیب۔",
+    },
+    content: {
+      en: [
+        { p: "Modern porcelain tiles can look remarkably like marble, so many people wonder whether natural stone is worth it. Neither is simply better. They suit different priorities." },
+        { h2: "What they are" },
+        { p: "Marble is a natural stone cut from quarried blocks. Its colour and veining are formed over a very long time, so every piece is unique. Porcelain is a dense ceramic tile made from refined clay fired at high temperature. Marble-look porcelain has a printed surface design that imitates stone." },
+        { h2: "Appearance" },
+        { p: "Marble has depth: light passes slightly into the surface and veins vary naturally from piece to piece. Porcelain designs are repeated across a set number of faces, so on large floors the pattern can occasionally repeat. Good porcelain is very convincing, especially in large formats." },
+        { h2: "Durability and maintenance" },
+        {
+          ul: [
+            "Porcelain is very hard, has very low water absorption and generally resists stains and acids well.",
+            "Marble is softer and porous. It can scratch, and acids can dull polished surfaces. It usually needs sealing and gentler cleaning products.",
+            "Marble can often be honed and re-polished to renew its surface. A damaged porcelain tile is normally replaced instead.",
+          ],
+        },
+        { h2: "Installation" },
+        { p: "Both need a flat, sound base and the correct adhesive. Natural stone requires extra care to match tone and veining between pieces and to avoid chipping edges. Large-format porcelain is thin and heavy for its size, so it needs careful handling and a very flat surface to avoid uneven edges." },
+        { h2: "Which should you choose?" },
+        {
+          ul: [
+            "Choose marble for feature walls, vanity tops, statement floors and spaces where natural character matters most.",
+            "Choose porcelain for busy family kitchens, commercial floors and wet areas where low maintenance is the priority.",
+            "Many projects combine both: porcelain on hard-working floors and marble where it will be seen and appreciated.",
+          ],
+        },
+        { p: "Haroon Marble works with both tiles and marble, and can help you decide which material belongs where in your project." },
+      ],
+      ur: [
+        { p: "جدید پورسلین ٹائلز ماربل جیسی دکھ سکتی ہیں، اس لیے بہت سے لوگ سوچتے ہیں کہ کیا قدرتی پتھر واقعی ضروری ہے۔ دونوں میں سے کوئی بھی مطلقاً بہتر نہیں، دونوں مختلف ترجیحات کے لیے موزوں ہیں۔" },
+        { h2: "یہ کیا ہیں" },
+        { p: "ماربل کان سے نکالے گئے بلاکس سے کاٹا گیا قدرتی پتھر ہے۔ اس کا رنگ اور دھاریاں بہت طویل عرصے میں بنتی ہیں، اس لیے ہر ٹکڑا منفرد ہوتا ہے۔ پورسلین ایک گھنی سیرامک ٹائل ہے جو صاف کی گئی مٹی کو بہت زیادہ درجہ حرارت پر پکا کر بنائی جاتی ہے۔ ماربل نما پورسلین کی سطح پر پتھر جیسا ڈیزائن پرنٹ ہوتا ہے۔" },
+        { h2: "ظاہری شکل" },
+        { p: "ماربل میں گہرائی ہوتی ہے: روشنی سطح میں ہلکا سا داخل ہوتی ہے اور دھاریاں ہر ٹکڑے میں قدرتی طور پر مختلف ہوتی ہیں۔ پورسلین کے ڈیزائن محدود چہروں پر دہرائے جاتے ہیں، اس لیے بڑے فرش پر کبھی کبھی ڈیزائن دہرایا ہوا نظر آ سکتا ہے۔ اچھی پورسلین خاص طور پر بڑے سائز میں بہت حقیقی لگتی ہے۔" },
+        { h2: "پائیداری اور دیکھ بھال" },
+        {
+          ul: [
+            "پورسلین بہت سخت ہوتی ہے، بہت کم پانی جذب کرتی ہے اور عموماً داغ اور تیزاب کے خلاف اچھی مزاحمت رکھتی ہے۔",
+            "ماربل نسبتاً نرم اور مسام دار ہے۔ اس پر خراش آ سکتی ہے اور تیزاب پالش شدہ سطح کو مدھم کر سکتا ہے۔ اسے عموماً سیلنگ اور نرم صفائی کی اشیا کی ضرورت ہوتی ہے۔",
+            "ماربل کو اکثر ہون اور دوبارہ پالش کر کے نیا کیا جا سکتا ہے، جبکہ خراب پورسلین ٹائل عموماً بدلی جاتی ہے۔",
+          ],
+        },
+        { h2: "تنصیب" },
+        { p: "دونوں کے لیے ہموار اور مضبوط بنیاد اور درست مسالہ ضروری ہے۔ قدرتی پتھر میں ٹکڑوں کے درمیان رنگ اور دھاریاں ملانے اور کناروں کو ٹوٹنے سے بچانے کے لیے زیادہ احتیاط چاہیے۔ بڑے سائز کی پورسلین اپنے سائز کے لحاظ سے پتلی اور بھاری ہوتی ہے، اس لیے اسے احتیاط سے اٹھانا اور بالکل ہموار سطح پر لگانا ضروری ہے۔" },
+        { h2: "آپ کو کیا چننا چاہیے؟" },
+        {
+          ul: [
+            "نمایاں دیواروں، وینٹی ٹاپ، شاندار فرش اور ایسی جگہوں کے لیے ماربل چنیں جہاں قدرتی کردار سب سے اہم ہو۔",
+            "مصروف فیملی کچن، کمرشل فرش اور گیلی جگہوں کے لیے پورسلین چنیں جہاں کم دیکھ بھال ترجیح ہو۔",
+            "بہت سے منصوبوں میں دونوں کا امتزاج ہوتا ہے: محنت طلب فرش پر پورسلین اور جہاں نظر آئے وہاں ماربل۔",
+          ],
+        },
+        { p: "ہارون ماربل ٹائلز اور ماربل دونوں کے ساتھ کام کرتا ہے اور آپ کو یہ فیصلہ کرنے میں مدد دے سکتا ہے کہ آپ کے منصوبے میں کون سا مٹیریل کہاں لگے۔" },
+      ],
+    },
+  },
+  {
+    slug: "how-to-maintain-marble-flooring",
+    sample: true,
+    category: "care",
+    published: "2026-10-14",
+    readingMinutes: 5,
+    cover: "elevatorLobby",
+    title: { en: "How to Maintain Marble Flooring", ur: "ماربل فرش کی دیکھ بھال کیسے کریں" },
+    excerpt: {
+      en: "Simple daily habits and a few things to avoid that keep a marble floor looking its best for years.",
+      ur: "روزمرہ کی چند آسان عادات اور کچھ احتیاطیں جو ماربل فرش کو برسوں تک خوبصورت رکھتی ہیں۔",
+    },
+    content: {
+      en: [
+        { p: "A marble floor does not need complicated care, but it does need the right care. Most damage comes from grit, acids and harsh cleaners rather than from age." },
+        { h2: "Daily and weekly care" },
+        {
+          ul: [
+            "Sweep or dust-mop often. Fine grit acts like sandpaper under shoes and slowly dulls the surface.",
+            "Use mats at entrances to catch dirt before it reaches the stone.",
+            "Mop with clean water and a pH-neutral cleaner made for natural stone, then dry with a soft cloth if the floor stays wet.",
+          ],
+        },
+        { h2: "What to avoid" },
+        {
+          ul: [
+            "Vinegar, lemon, and acidic or bleach-based cleaners, which can etch and dull marble.",
+            "Abrasive powders and scouring pads.",
+            "Dragging furniture. Use felt pads under chair and table legs.",
+            "Leaving spills to sit, especially juice, tea, oil and coloured liquids.",
+          ],
+        },
+        { h2: "Dealing with spills" },
+        { p: "Blot spills straight away with a soft cloth rather than wiping, which spreads them. Rinse the area with clean water and dry it. If a mark remains, ask for advice before trying strong products, because the wrong cleaner can make a stain worse." },
+        { h2: "Sealing" },
+        { p: "Many marble floors benefit from a penetrating sealer that slows down how fast liquids soak in. How often to reseal depends on the stone, the finish and how much the floor is used. A simple test: if drops of water darken the stone within a few minutes, it may be time to reseal." },
+        { h2: "When to call a professional" },
+        { p: "If the floor has lost its shine across large areas, has deep scratches or etch marks, or shows uneven patches, professional honing and polishing can often restore it. An inspection first will show what the stone needs." },
+      ],
+      ur: [
+        { p: "ماربل فرش کو پیچیدہ دیکھ بھال کی ضرورت نہیں، مگر درست دیکھ بھال ضروری ہے۔ زیادہ تر نقصان عمر سے نہیں بلکہ مٹی کے ذرات، تیزاب اور سخت کیمیکلز سے ہوتا ہے۔" },
+        { h2: "روزانہ اور ہفتہ وار دیکھ بھال" },
+        {
+          ul: [
+            "اکثر جھاڑو یا ڈسٹ موپ لگائیں۔ باریک مٹی جوتوں کے نیچے ریگمال کی طرح کام کرتی ہے اور سطح کو آہستہ آہستہ مدھم کرتی ہے۔",
+            "داخلی راستوں پر میٹ رکھیں تاکہ مٹی پتھر تک پہنچنے سے پہلے رک جائے۔",
+            "صاف پانی اور قدرتی پتھر کے لیے بنے نیوٹرل (pH) کلینر سے پونچھا لگائیں، اور فرش گیلا رہے تو نرم کپڑے سے خشک کریں۔",
+          ],
+        },
+        { h2: "کن چیزوں سے بچیں" },
+        {
+          ul: [
+            "سرکہ، لیموں اور تیزابی یا بلیچ والے کلینر، جو ماربل کو مدھم اور خراب کر سکتے ہیں۔",
+            "کھردرے پاؤڈر اور رگڑنے والے پیڈ۔",
+            "فرنیچر گھسیٹنا۔ کرسیوں اور میزوں کے پایوں کے نیچے فیلٹ پیڈ لگائیں۔",
+            "گری ہوئی چیزوں کو دیر تک چھوڑ دینا، خاص طور پر جوس، چائے، تیل اور رنگین مائعات۔",
+          ],
+        },
+        { h2: "گری ہوئی چیزوں سے نمٹنا" },
+        { p: "گری ہوئی چیز کو رگڑنے کے بجائے فوراً نرم کپڑے سے دبا کر جذب کریں، کیونکہ رگڑنے سے وہ پھیلتی ہے۔ جگہ کو صاف پانی سے دھو کر خشک کریں۔ اگر نشان رہ جائے تو سخت کیمیکل آزمانے سے پہلے مشورہ کریں، کیونکہ غلط کلینر داغ کو مزید خراب کر سکتا ہے۔" },
+        { h2: "سیلنگ" },
+        { p: "بہت سے ماربل فرشوں کو ایسے سیلر سے فائدہ ہوتا ہے جو مائعات کے جذب ہونے کی رفتار کم کرتا ہے۔ دوبارہ سیل کرنے کا وقفہ پتھر، فنش اور استعمال پر منحصر ہے۔ ایک آسان جانچ: اگر پانی کے قطرے چند منٹ میں پتھر کو گہرا کر دیں تو شاید دوبارہ سیل کرنے کا وقت ہے۔" },
+        { h2: "ماہر کو کب بلائیں" },
+        { p: "اگر فرش کے بڑے حصوں کی چمک ختم ہو گئی ہو، گہری خراشیں یا تیزاب کے نشان ہوں، یا سطح ناہموار دکھے، تو ماہرانہ ہوننگ اور پالشنگ سے اکثر اسے بحال کیا جا سکتا ہے۔ پہلے معائنہ بتائے گا کہ پتھر کو کیا چاہیے۔" },
+      ],
+    },
+  },
+  {
+    slug: "select-tiles-for-kitchens-and-bathrooms",
+    sample: true,
+    category: "planning",
+    published: "2026-10-14",
+    readingMinutes: 6,
+    cover: "bathroomShower",
+    title: { en: "How to Select Tiles for Kitchens and Bathrooms", ur: "کچن اور باتھ روم کے لیے ٹائلز کا انتخاب کیسے کریں" },
+    excerpt: {
+      en: "Grip, water resistance, size, grout and layout: what to check before choosing tiles for the hardest-working rooms in the house.",
+      ur: "گرفت، پانی سے مزاحمت، سائز، گراؤٹ اور لے آؤٹ: گھر کے سب سے مصروف کمروں کے لیے ٹائلز چننے سے پہلے کیا دیکھیں۔",
+    },
+    content: {
+      en: [
+        { p: "Kitchens and bathrooms are where tiles work hardest. They face water, steam, grease, cleaning products and daily traffic, so practical performance should guide the choice as much as appearance." },
+        { h2: "Floors: put grip first" },
+        { p: "Bathroom and kitchen floors get wet. A matt or textured tile gives more grip than a high-gloss one. Ask about the tile's slip rating where available, especially for showers, and remember that smaller tiles with more grout lines also add grip underfoot." },
+        { h2: "Choose a suitable body" },
+        { p: "Porcelain tiles absorb very little water and are hard-wearing, which makes them a dependable choice for floors and showers. Ceramic wall tiles are lighter and easier to cut and are well suited to splashbacks and bathroom walls." },
+        { h2: "Size and layout" },
+        {
+          ul: [
+            "Large-format tiles mean fewer grout lines and a clean, modern look, but need a very flat surface.",
+            "Smaller tiles and mosaics follow slopes towards drains more easily, which suits shower floors.",
+            "Plan the layout so cut tiles are balanced at each side and do not end up as thin slivers at doorways or around the basin.",
+          ],
+        },
+        { h2: "Grout matters more than you think" },
+        { p: "Grout colour changes the whole look. A matching grout makes the surface read as one, while a contrasting grout highlights the pattern. In kitchens and showers, consider stain-resistant grout options and plan for sealing where recommended." },
+        { h2: "Kitchen splashbacks" },
+        { p: "Behind the hob and sink, choose a glazed surface that wipes clean easily. Plan the tile edges around sockets, windows and the underside of wall cabinets before fixing so there are no awkward cuts." },
+        { h2: "Bring it together with a plan" },
+        { p: "Measuring the room and drawing the layout in 2D or 3D lets you see the finished result, check how floor and wall tiles line up, and order the right quantity. This is exactly the planning Haroon Marble carries out before work begins." },
+      ],
+      ur: [
+        { p: "کچن اور باتھ روم وہ جگہیں ہیں جہاں ٹائلز سب سے زیادہ محنت کرتی ہیں۔ انہیں پانی، بھاپ، چکنائی، صفائی کی اشیا اور روزانہ کی آمد و رفت کا سامنا ہوتا ہے، اس لیے انتخاب میں عملی کارکردگی اتنی ہی اہم ہے جتنی خوبصورتی۔" },
+        { h2: "فرش: گرفت سب سے پہلے" },
+        { p: "باتھ روم اور کچن کے فرش گیلے ہوتے ہیں۔ میٹ یا کھردری ٹائل زیادہ چمکدار ٹائل سے بہتر گرفت دیتی ہے۔ جہاں دستیاب ہو، خاص طور پر شاور کے لیے، ٹائل کی سلپ ریٹنگ پوچھیں، اور یاد رکھیں کہ زیادہ گراؤٹ لائنوں والی چھوٹی ٹائلیں بھی گرفت بڑھاتی ہیں۔" },
+        { h2: "مناسب قسم کا انتخاب" },
+        { p: "پورسلین ٹائلز بہت کم پانی جذب کرتی ہیں اور مضبوط ہوتی ہیں، اس لیے فرش اور شاور کے لیے قابل اعتماد انتخاب ہیں۔ سیرامک دیواری ٹائلز ہلکی اور کاٹنے میں آسان ہوتی ہیں اور کچن کی دیوار اور باتھ روم کی دیواروں کے لیے موزوں ہیں۔" },
+        { h2: "سائز اور لے آؤٹ" },
+        {
+          ul: [
+            "بڑے سائز کی ٹائلز میں گراؤٹ لائنیں کم اور تاثر صاف اور جدید ہوتا ہے، مگر انہیں بالکل ہموار سطح چاہیے۔",
+            "چھوٹی ٹائلز اور موزیک نالی کی طرف ڈھلوان کو آسانی سے اپناتی ہیں، جو شاور کے فرش کے لیے موزوں ہے۔",
+            "لے آؤٹ اس طرح بنائیں کہ کٹی ٹائلیں دونوں طرف متوازن ہوں اور دروازوں یا بیسن کے گرد باریک پٹیاں نہ بنیں۔",
+          ],
+        },
+        { h2: "گراؤٹ آپ کی سوچ سے زیادہ اہم ہے" },
+        { p: "گراؤٹ کا رنگ پورا تاثر بدل دیتا ہے۔ ہم رنگ گراؤٹ سطح کو یکجا دکھاتا ہے، جبکہ متضاد گراؤٹ پیٹرن کو نمایاں کرتا ہے۔ کچن اور شاور میں داغ سے مزاحم گراؤٹ پر غور کریں اور جہاں تجویز ہو وہاں سیلنگ کی منصوبہ بندی کریں۔" },
+        { h2: "کچن کی دیوار (اسپلیش بیک)" },
+        { p: "چولہے اور سنک کے پیچھے ایسی گلیزڈ سطح چنیں جو آسانی سے صاف ہو۔ فکسنگ سے پہلے ساکٹس، کھڑکیوں اور اوپری کیبنٹ کے نیچے ٹائل کے کناروں کی منصوبہ بندی کریں تاکہ عجیب کٹنگ نہ ہو۔" },
+        { h2: "منصوبہ بندی سے سب کچھ یکجا کریں" },
+        { p: "کمرے کی پیمائش اور 2D یا 3D میں لے آؤٹ بنانے سے آپ مکمل نتیجہ دیکھ سکتے ہیں، فرش اور دیوار کی ٹائلوں کی سیدھ جانچ سکتے ہیں اور درست مقدار منگوا سکتے ہیں۔ ہارون ماربل کام شروع کرنے سے پہلے بالکل یہی منصوبہ بندی کرتا ہے۔" },
+      ],
+    },
+  },
+];
+
+export function getPost(slug) {
+  return blogPosts.find((post) => post.slug === slug);
+}
