@@ -3,14 +3,14 @@ const en = {
     home: "Home",
     about: "About",
     services: "Services",
-    portfolio: "Portfolio",
+    portfolio: "Design Ideas",
     industries: "Industries",
     blog: "Blog",
     contact: "Contact",
   },
   common: {
     requestQuote: "Request a Quote",
-    exploreProjects: "Explore Our Projects",
+    exploreProjects: "Explore Design Ideas",
     callUs: "Call us",
     whatsapp: "WhatsApp",
     chatOnWhatsapp: "Chat on WhatsApp",
@@ -18,10 +18,10 @@ const en = {
     learnMore: "Learn more",
     viewAll: "View all",
     viewAllServices: "View all services",
-    viewPortfolio: "View the portfolio",
+    viewPortfolio: "View all design ideas",
     viewIndustries: "See all industries",
     readArticle: "Read article",
-    viewProject: "View concept",
+    viewProject: "View idea",
     viewService: "Service details",
     menu: "Menu",
     openMenu: "Open menu",
@@ -33,14 +33,9 @@ const en = {
     switchLanguage: "اردو",
     switchLanguageLabel: "Read this page in Urdu",
     breadcrumb: "Breadcrumb",
-    illustrativeBadge: "Illustrative concept",
-    illustrativeNote:
-      "These concepts use licensed stock photography to show the kind of work we plan and install. They are not completed Haroon Marble projects. Real project photos will be added here.",
     askAvailability: "Ask about availability",
     unverifiedServiceNote:
       "This service is listed for planning purposes. Please contact us to confirm availability for your project.",
-    sampleArticle: "Editorial sample",
-    sampleArticleNote: "This is a starter article prepared for the launch of the website and is pending review by Haroon Marble.",
     minutesRead: "{n} min read",
     publishedOn: "Published",
     previousImage: "Previous image",
@@ -58,7 +53,7 @@ const en = {
         "Haroon Marble plans, models and installs tile and marble surfaces with measured 2D/3D layouts, careful pattern work and clean finishing. Request a quote.",
     },
     about: {
-      title: "About Haroon Marble",
+      title: "About Us: Tile & Marble Specialists",
       description:
         "Learn how Haroon Marble approaches tile and marble work: measured planning, client-led design, proper fixing and careful finishing.",
     },
@@ -68,9 +63,9 @@ const en = {
         "Tile and marble fixing, 2D/3D modelling, surface design and pattern planning by Haroon Marble. Explore our services and request a quote.",
     },
     portfolio: {
-      title: "Portfolio",
+      title: "Design Ideas: Tile & Marble Kitchens, Bathrooms and Floors",
       description:
-        "Illustrative concepts showing the kitchens, bathrooms, floors, staircases and commercial spaces Haroon Marble plans and installs.",
+        "Tile and marble design ideas for kitchens, bathrooms, floors, staircases and feature walls, with the approach and materials for each.",
     },
     industries: {
       title: "Industries We Serve",
@@ -83,7 +78,7 @@ const en = {
         "Practical guides on choosing marble, comparing marble and porcelain, caring for marble floors and selecting tiles for kitchens and bathrooms.",
     },
     contact: {
-      title: "Contact Haroon Marble",
+      title: "Contact Us for a Tile or Marble Quote",
       description:
         "Call, WhatsApp or email Haroon Marble about your tile or marble project, or send your project details through the enquiry form.",
     },
@@ -136,7 +131,7 @@ const en = {
       finishes: { polished: "Polished", honed: "Honed" },
       dragHint: "Drag to look around",
       loading: "Loading 3D preview…",
-      note: "Illustrative 3D preview. Natural stone varies from piece to piece.",
+      note: "3D preview. Natural stone varies from piece to piece.",
       canvasLabel: "3D preview of a floor in {material}, {pattern} pattern, {finish} finish",
     },
     sectors: {
@@ -144,8 +139,9 @@ const en = {
       title: "For homes and for business.",
     },
     projects: {
-      eyebrow: "Portfolio",
-      title: "Concepts that show how we think.",
+      eyebrow: "Design ideas",
+      title: "Ideas for your next space.",
+      text: "Kitchens, bathrooms, floors and feature walls, with the approach we would take to plan and install each one.",
     },
     process: {
       eyebrow: "Our process",
@@ -214,27 +210,31 @@ const en = {
     additionalText: "Related work we can discuss for your project. Please contact us to confirm availability.",
     includesTitle: "What this includes",
     processTitle: "How it works",
-    relatedProjects: "Related concepts",
+    relatedProjects: "Related design ideas",
     otherServices: "Other services",
     enquireTitle: "Discuss this service",
     enquireText: "Tell us about your space and we will get back to you.",
+    problemsTitle: "Problems this solves",
+    optionsTitle: "Options to consider",
+    considerationsTitle: "Planning considerations",
+    relatedGuides: "Related guides",
   },
   portfolio: {
     hero: {
-      eyebrow: "Portfolio",
+      eyebrow: "Design ideas",
       title: "Kitchens, bathrooms, floors and feature walls.",
-      text: "Illustrative concepts showing the kinds of tile and marble work Haroon Marble plans and installs.",
+      text: "Design ideas for tile and marble spaces, each with the approach and materials we would use to plan and install it.",
     },
-    filterLabel: "Filter concepts by category",
+    filterLabel: "Filter design ideas by category",
     all: "All",
-    noResults: "No concepts in this category yet.",
-    resultsCount: "{n} concepts shown",
+    noResults: "No design ideas in this category yet.",
+    resultsCount: "{n} design ideas shown",
     openGallery: "Open gallery image {i}: {alt}",
     approachTitle: "Our approach",
     servicesTitle: "Services involved",
     materialsTitle: "Materials considered",
     galleryTitle: "Gallery",
-    otherProjects: "More concepts",
+    otherProjects: "More design ideas",
   },
   industries: {
     hero: {
@@ -259,6 +259,24 @@ const en = {
     noResults: "No guides match your search.",
     moreArticles: "More guides",
     backToBlog: "Back to all guides",
+    relatedServices: "Related services",
+    calculator: {
+      title: "Tile and marble quantity calculator",
+      intro: "Enter the room size and tile size to estimate how many tiles or marble pieces to order.",
+      unit: "Measure in",
+      feet: "Feet",
+      metres: "Metres",
+      length: "Room length",
+      width: "Room width",
+      tileSize: "Tile size",
+      wastage: "Wastage allowance",
+      wastageHint: "About 10% for straight layouts, 15% or more for diagonal and herringbone.",
+      area: "Floor area",
+      tiles: "Tiles or pieces to order",
+      note: "An estimate only. Real quantities depend on the room shape, cuts and pattern; we confirm them from the measured layout.",
+      sqft: "sq ft",
+      sqm: "m²",
+    },
   },
   contact: {
     hero: {
@@ -318,7 +336,6 @@ const en = {
     },
   },
   proof: {
-    sampleBadge: "SAMPLE: development preview only. Replace with real data before publishing.",
     statsHeading: "Haroon Marble in numbers",
     whyChoose: {
       eyebrow: "Why choose us",
@@ -346,8 +363,7 @@ const en = {
   },
   credits: {
     title: "Image credits",
-    intro:
-      "Photography on this website, apart from the founder portrait, is licensed stock imagery used for illustration. It does not show completed Haroon Marble projects.",
+    intro: "Sources and licences for the photography used on this website.",
     photoBy: "Photo by {name}",
     on: "on {source}",
     license: "Licence: {license}",
@@ -359,7 +375,6 @@ const en = {
     contactTitle: "Contact",
     languageTitle: "Language",
     rights: "All rights reserved.",
-    stockNotice: "Portfolio and gallery images are illustrative stock photography.",
   },
   notFound: {
     title: "Page not found",

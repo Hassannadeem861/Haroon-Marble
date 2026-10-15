@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { FaqSection } from "@/components/proof/FaqSection";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Info } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { QuantityCalculator } from "@/components/blog/QuantityCalculator";
+import { getService } from "@/data/services";
 import { ArticleCard } from "@/components/cards/ArticleCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
@@ -37,8 +39,42 @@ export async function generateMetadata({ params }) {
   });
 }
 
-function ArticleBlock({ block }) {
+function ArticleBlock({ block, calculatorLabels }) {
   if (block.h2) return <h2>{block.h2}</h2>;
+  if (block.calculator) return <QuantityCalculator labels={calculatorLabels} />;
+  if (block.table)
+    return (
+      <div className="my-6 overflow-x-auto">
+        <table className="w-full border-collapse text-start text-[0.95rem]">
+          <thead>
+            <tr className="border-b-2 border-gold">
+              {block.table.head.map((cell) => (
+                <th key={cell} scope="col" className="px-3 py-2 text-start font-semibold text-charcoal">
+                  {cell}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {block.table.rows.map((row) => (
+              <tr key={row.join("|")} className="border-b border-border">
+                {row.map((cell, index) =>
+                  index === 0 ? (
+                    <th key={cell} scope="row" className="px-3 py-2 text-start font-semibold whitespace-nowrap text-charcoal">
+                      {cell}
+                    </th>
+                  ) : (
+                    <td key={cell} className="px-3 py-2">
+                      {cell}
+                    </td>
+                  ),
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
   if (block.ul)
     return (
       <ul>
@@ -59,6 +95,7 @@ export default async function ArticlePage({ params }) {
   const title = pick(post.title, locale);
   const category = blogCategories.find((item) => item.id === post.category);
   const more = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
+  const relatedServices = (post.relatedServices ?? []).map(getService).filter((service) => service?.verified);
 
   return (
     <>
@@ -94,17 +131,29 @@ export default async function ArticlePage({ params }) {
 
         <div className="container-page py-14 md:py-20">
           <div className="prose-article mx-auto text-charcoal/90">
-            {post.sample ? (
-              <aside className="mb-10 flex gap-3 rounded-sm border border-gold/50 bg-gold/10 p-4 text-sm leading-relaxed text-charcoal">
-                <Info aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-gold-deep" />
-                <span>
-                  <strong className="font-semibold">{dict.common.sampleArticle}.</strong> {dict.common.sampleArticleNote}
-                </span>
-              </aside>
-            ) : null}
             {pick(post.content, locale).map((block, index) => (
-              <ArticleBlock key={index} block={block} />
+              <ArticleBlock key={index} block={block} calculatorLabels={dict.blog.calculator} />
             ))}
+            {relatedServices.length ? (
+              <nav aria-labelledby="related-services-heading" className="mt-12 rounded-sm border border-border bg-white p-6">
+                <h2 id="related-services-heading" className="mt-0! text-xl!">
+                  {dict.blog.relatedServices}
+                </h2>
+                <ul className="mt-3! list-none! ps-0!">
+                  {relatedServices.map((service) => (
+                    <li key={service.slug}>
+                      <Link
+                        href={localizePath(locale, `/services/${service.slug}`)}
+                        className="inline-flex min-h-10 items-center gap-2 font-semibold text-charcoal underline decoration-gold underline-offset-4 hover:decoration-2"
+                      >
+                        {pick(service.title, locale)}
+                        <ArrowRight aria-hidden="true" className="size-4 rtl:rotate-180" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ) : null}
             <p className="mt-12 border-t border-border pt-8">
               <Link
                 href={localizePath(locale, "/blog")}

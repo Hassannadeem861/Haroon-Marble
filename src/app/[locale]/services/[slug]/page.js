@@ -11,8 +11,12 @@ import { Icon } from "@/components/shared/Icon";
 import { RegistryImage } from "@/components/shared/RegistryImage";
 import { Reveal } from "@/components/shared/Reveal";
 import { Eyebrow, SectionHeading } from "@/components/shared/SectionHeading";
+import { ArticleCard } from "@/components/cards/ArticleCard";
+import { ProcessSteps } from "@/components/shared/ProcessSteps";
+import { getPost } from "@/data/blogPosts";
 import { projects } from "@/data/projects";
-import { getService, services } from "@/data/services";
+import { getServiceLanding } from "@/data/serviceLandings";
+import { getService, isServiceIndexable, services } from "@/data/services";
 import { getDictionary } from "@/lib/dictionaries";
 import { localizePath, pick } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
@@ -26,12 +30,27 @@ export async function generateMetadata({ params }) {
   const { locale, slug } = await params;
   const service = getService(slug);
   if (!service) return {};
+  const landing = getServiceLanding(slug);
   return buildMetadata({
     locale,
     path: `/services/${slug}`,
-    title: pick(service.title, locale),
-    description: pick(service.summary, locale),
+    title: pick(landing?.seo.title ?? service.title, locale),
+    description: pick(landing?.seo.description ?? service.summary, locale),
+    noIndex: !isServiceIndexable(service),
   });
+}
+
+function BulletList({ items }) {
+  return (
+    <ul className="mt-6 divide-y divide-border border-y border-border">
+      {items.map((item) => (
+        <li key={item} className="flex gap-4 py-4 text-charcoal">
+          <span aria-hidden="true" className="mt-2.5 size-1.5 shrink-0 rotate-45 bg-gold" />
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default async function ServicePage({ params }) {
@@ -41,6 +60,8 @@ export default async function ServicePage({ params }) {
 
   const dict = getDictionary(locale);
   const title = pick(service.title, locale);
+  const landing = getServiceLanding(service.slug);
+  const guides = (landing?.relatedPosts ?? []).map(getPost).filter(Boolean);
   const related = projects.filter((project) => project.services.includes(service.slug)).slice(0, 3);
   const others = services.filter((item) => item.slug !== service.slug && item.verified).slice(0, 4);
 
@@ -89,15 +110,29 @@ export default async function ServicePage({ params }) {
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+            {landing ? (
+              <>
+                <h2 className="mt-12 text-3xl text-charcoal">{dict.services.problemsTitle}</h2>
+                <BulletList items={pick(landing.problems, locale)} />
+              </>
+            ) : null}
             <h2 className="mt-12 text-3xl text-charcoal">{dict.services.includesTitle}</h2>
-            <ul className="mt-6 divide-y divide-border border-y border-border">
-              {pick(service.includes, locale).map((item) => (
-                <li key={item} className="flex gap-4 py-4 text-charcoal">
-                  <span aria-hidden="true" className="mt-2.5 size-1.5 shrink-0 rotate-45 bg-gold" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <BulletList items={pick(service.includes, locale)} />
+            {landing ? (
+              <>
+                <h2 className="mt-12 text-3xl text-charcoal">{dict.services.optionsTitle}</h2>
+                <div className="mt-6 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2">
+                  {landing.options.map((option) => (
+                    <div key={option.title.en} className="bg-ivory p-6">
+                      <h3 className="text-xl text-charcoal">{pick(option.title, locale)}</h3>
+                      <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">{pick(option.text, locale)}</p>
+                    </div>
+                  ))}
+                </div>
+                <h2 className="mt-12 text-3xl text-charcoal">{dict.services.considerationsTitle}</h2>
+                <BulletList items={pick(landing.considerations, locale)} />
+              </>
+            ) : null}
           </div>
           <div className="lg:col-span-4 lg:col-start-9">
             <div className="lg:sticky lg:top-[calc(var(--header-height)+2rem)]">
@@ -117,10 +152,25 @@ export default async function ServicePage({ params }) {
       {related.length ? (
         <section aria-labelledby="related-heading" className="border-t border-border py-16 md:py-24">
           <div className="container-page">
-            <SectionHeading id="related-heading" title={dict.services.relatedProjects} text={dict.common.illustrativeNote} />
+            <SectionHeading id="related-heading" title={dict.services.relatedProjects} />
             <Reveal stagger className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((project) => (
                 <ProjectCard key={project.slug} project={project} locale={locale} dict={dict} />
+              ))}
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
+
+      {landing ? <ProcessSteps locale={locale} eyebrow={dict.home.process.eyebrow} title={dict.home.process.title} /> : null}
+
+      {guides.length ? (
+        <section aria-labelledby="guides-heading" className="py-16 md:py-24">
+          <div className="container-page">
+            <SectionHeading id="guides-heading" title={dict.services.relatedGuides} />
+            <Reveal stagger className="mt-10 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+              {guides.map((post) => (
+                <ArticleCard key={post.slug} post={post} locale={locale} dict={dict} />
               ))}
             </Reveal>
           </div>
@@ -146,7 +196,7 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      <FaqSection locale={locale} dict={dict} page="services" />
+      <FaqSection locale={locale} dict={dict} page="services" items={landing?.faqs} />
       <CtaBand locale={locale} dict={dict} />
     </>
   );

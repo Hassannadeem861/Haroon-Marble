@@ -1,7 +1,9 @@
 import {
   Box,
+  ChefHat,
   MessageCircle,
   Clock,
+  Droplets,
   Footprints,
   Gem,
   Grid3x3,
@@ -17,7 +19,7 @@ import {
 } from "lucide-react";
 
 // Data files reference icons by name; this map keeps the bundle to the icons used.
-const icons = { Box, Clock, Footprints, Gem, Grid3x3, Hammer, LayoutGrid, MessageCircle, Package, PanelsTopLeft, PenTool, Ruler, Sparkles, Square, Users };
+const icons = { Box, ChefHat, Clock, Droplets, Footprints, Gem, Grid3x3, Hammer, LayoutGrid, MessageCircle, Package, PanelsTopLeft, PenTool, Ruler, Sparkles, Square, Users };
 
 export function Icon({ name, className }) {
   const Component = icons[name] ?? Square;

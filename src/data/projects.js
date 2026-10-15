@@ -1,9 +1,11 @@
 // Portfolio entries.
 //
-// IMPORTANT: every entry below is an ILLUSTRATIVE CONCEPT built from licensed
-// stock photography. None of them is a completed Haroon Marble project and the
-// site labels them as such. Replace them with real projects (and set
-// illustrative: false) once authentic photos and details are supplied.
+// IMPORTANT: every entry below is a DESIGN IDEA built from licensed stock
+// photography, not a completed Haroon Marble project. The section is presented
+// as "Design Ideas" (nav, headings, summaries "A concept for..."), so it must
+// never be renamed to imply finished work while these photos are used.
+// When real projects are available, add them with illustrative: false and
+// real photos, and consider a separate "Projects" section for them.
 
 export const projectCategories = [
   { id: "residential", label: { en: "Residential", ur: "رہائشی" } },
@@ -172,6 +174,9 @@ export const projects = [
     materials: { en: ["Translucent onyx-style stone", "Light stone flooring"], ur: ["شفاف اونکس طرز کا پتھر", "ہلکے رنگ کا پتھریلا فرش"] },
   },
 ];
+
+// All design-idea pages are indexable (owner's decision, October 2026).
+export const isProjectIndexable = () => true;
 
 export function getProject(slug) {
   return projects.find((project) => project.slug === slug);

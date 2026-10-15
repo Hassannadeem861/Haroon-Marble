@@ -1,17 +1,15 @@
 import Link from "next/link";
 import { FaqSection } from "@/components/proof/FaqSection";
 import { notFound } from "next/navigation";
-import { Info } from "lucide-react";
 import { ProjectCard } from "@/components/cards/ProjectCard";
 import { ProjectGallery } from "@/components/portfolio/ProjectGallery";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { CtaBand } from "@/components/shared/CtaBand";
 import { EnquiryPanel } from "@/components/shared/EnquiryPanel";
-import { IllustrativeBadge } from "@/components/shared/IllustrativeBadge";
 import { Reveal } from "@/components/shared/Reveal";
-import { SectionHeading } from "@/components/shared/SectionHeading";
+import { Eyebrow, SectionHeading } from "@/components/shared/SectionHeading";
 import { getImage } from "@/data/images";
-import { getProject, projectCategories, projects } from "@/data/projects";
+import { getProject, isProjectIndexable, projectCategories, projects } from "@/data/projects";
 import { getService } from "@/data/services";
 import { getDictionary } from "@/lib/dictionaries";
 import { getDirection, localizePath, pick } from "@/lib/i18n";
@@ -32,6 +30,7 @@ export async function generateMetadata({ params }) {
     title: pick(project.title, locale),
     description: pick(project.summary, locale),
     image: { src: cover.src, width: cover.width, height: cover.height, alt: pick(cover.alt, locale) },
+    noIndex: !isProjectIndexable(project),
   });
 }
 
@@ -69,18 +68,12 @@ export default async function ProjectPage({ params }) {
           />
           <div className="mt-10 grid animate-rise gap-6 md:mt-14 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
-              {project.illustrative ? <IllustrativeBadge label={dict.common.illustrativeBadge} /> : null}
+              <Eyebrow>{copy.hero.eyebrow}</Eyebrow>
               <h1 className="mt-5 text-[2.35rem] leading-[1.06] text-charcoal sm:text-5xl lg:text-[3.4rem]">{title}</h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{pick(project.summary, locale)}</p>
             </div>
             <p className="text-sm text-muted-foreground lg:col-span-4 lg:text-end">{categories.join(" · ")}</p>
           </div>
-          {project.illustrative ? (
-            <p className="mt-8 flex max-w-3xl gap-3 rounded-sm border border-gold/50 bg-gold/10 p-4 text-sm leading-relaxed text-charcoal">
-              <Info aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-gold-deep" />
-              {dict.common.illustrativeNote}
-            </p>
-          ) : null}
         </div>
       </header>
 

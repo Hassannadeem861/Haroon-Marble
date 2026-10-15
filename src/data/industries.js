@@ -6,6 +6,7 @@ export const industries = [
   {
     slug: "residential",
     image: "kitchenWaterfall",
+    relatedServices: ["bathroom-tile-and-marble-installation", "kitchen-tile-and-marble-installation", "marble-flooring"],
     title: { en: "Residential Homes", ur: "رہائشی گھر" },
     summary: {
       en: "Kitchens, bathrooms, living areas, staircases and entrances where comfort, easy cleaning and a lasting finish matter most.",

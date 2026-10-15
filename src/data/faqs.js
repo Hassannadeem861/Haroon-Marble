@@ -9,8 +9,8 @@
 const quote = {
   q: { en: "How do I get a quote?", ur: "کوٹیشن کیسے حاصل کروں؟" },
   a: {
-    en: "Call or WhatsApp +92 303 0291757, email m.hassan.nadeem987@gmail.com, or use the enquiry form on the Contact page. Photos of your space and approximate measurements help us respond more accurately.",
-    ur: "\u2066+92 303 0291757\u2069 پر کال یا واٹس ایپ کریں، \u2066m.hassan.nadeem987@gmail.com\u2069 پر ای میل کریں، یا رابطہ صفحے پر انکوائری فارم استعمال کریں۔ اپنی جگہ کی تصاویر اور اندازاً پیمائش سے ہم زیادہ درست جواب دے سکتے ہیں۔",
+    en: "Call or WhatsApp +92 303 0291757, email marbleharoon@gmail.com, or use the enquiry form on the Contact page. Photos of your space and approximate measurements help us respond more accurately.",
+    ur: "\u2066+92 303 0291757\u2069 پر کال یا واٹس ایپ کریں، \u2066marbleharoon@gmail.com\u2069 پر ای میل کریں، یا رابطہ صفحے پر انکوائری فارم استعمال کریں۔ اپنی جگہ کی تصاویر اور اندازاً پیمائش سے ہم زیادہ درست جواب دے سکتے ہیں۔",
   },
 };
 
@@ -81,13 +81,6 @@ export const faqs = {
   ],
   services: [modelling, ownMaterial, price, timeline],
   portfolio: [
-    {
-      q: { en: "Are these photos of your completed projects?", ur: "کیا یہ آپ کے مکمل شدہ منصوبوں کی تصاویر ہیں؟" },
-      a: {
-        en: "Not yet. The portfolio currently shows illustrative concepts using licensed stock photography, to show the kind of work we plan and install. Photos of real Haroon Marble projects will be added.",
-        ur: "ابھی نہیں۔ پورٹ فولیو میں فی الحال لائسنس یافتہ اسٹاک تصاویر کے ذریعے تصوراتی نمونے دکھائے گئے ہیں تاکہ معلوم ہو کہ ہم کس طرح کا کام کرتے ہیں۔ ہارون ماربل کے اصل منصوبوں کی تصاویر شامل کی جائیں گی۔",
-      },
-    },
     {
       q: { en: "Can you create a design similar to one of these concepts?", ur: "کیا آپ ان تصورات میں سے کسی جیسا ڈیزائن بنا سکتے ہیں؟" },
       a: {

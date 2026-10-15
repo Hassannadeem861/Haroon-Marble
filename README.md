@@ -48,18 +48,22 @@ Notes for the free plan: the Proxy (locale redirect) runs as a lightweight funct
 | Blog articles | `src/data/blogPosts.js` |
 | Process, pillars, standards, material swatches | `src/data/company.js` |
 | Images: sizes, bilingual alt text, credits | `src/data/images.js` |
+| In-depth service landing content (problems, options, FAQs, related guides) | `src/data/serviceLandings.js` |
+| Newer guides (marble types, tile sizes, patterns, quantity calculator) | `src/data/blogGuides.js` |
 | FAQs for each page | `src/data/faqs.js` |
 | Statistics, client testimonials, events | `src/data/socialProof.js` |
 | "Why choose us" reasons | `src/data/company.js` (`reasons`) |
+| Interface text (English / Urdu) | `src/dictionaries/en.js`, `src/dictionaries/ur.js` |
 
 ### Statistics, testimonials and events
 
-These sections (the animated counter, the testimonial slider and "Events we participated in") are built and animated. They stay **hidden on the live site until real data is added** to the `verified` arrays in `src/data/socialProof.js`. During `npm run dev`, sample data is shown instead, marked with a red "SAMPLE" label, so you can review the design. Sample data never appears in a production build.
+These sections (the animated counter, the testimonial slider and "Events we participated in") are built and animated, but are **not shown anywhere until real data is added** to the lists in `src/data/socialProof.js` (the file shows the entry format). Each section appears automatically once its list has entries.
 
 Only add genuine figures, events and testimonials (with the client's permission). Invented numbers or reviews mislead customers, and fake reviews are illegal in many countries.
-| Interface text (English / Urdu) | `src/dictionaries/en.js`, `src/dictionaries/ur.js` |
 
 To add a blog post, project or service, add an entry to the relevant data file with both `en` and `ur` text. Its page, sitemap entry and metadata are generated automatically.
+
+**Search indexing rule:** all services are currently confirmed and indexed. A service set to `verified: false` would be published with `noindex, follow` and left out of the sitemap. All portfolio pages are indexed. Because they use stock photos, the section is presented as **Design Ideas** (URL `/portfolio`); do not rename it to "Projects" or "Our work" while stock photos are used. Add real projects with `illustrative: false` once photos are available.
 
 ## Contact form
 
@@ -75,10 +79,9 @@ Nothing below was invented. Each item is hidden or clearly labelled until suppli
 - [ ] **Confirm the owner portrait.** `public/images/owner-portrait.webp` is the generated portrait supplied for the project. Confirm the subject approves it and that it is an accurate likeness, or replace it with a real photograph.
 - [ ] **Confirm WhatsApp** is active on +92 303 0291757.
 - [ ] **Business address, opening hours and service areas.** Once added to `site.js`, they can be shown on the Contact page and added to structured data (a `LocalBusiness` type needs an address).
-- [ ] **Confirm or remove the five unconfirmed services** (`verified: false` in `services.js`): marble flooring, wall cladding & feature walls, polishing & restoration, staircases & custom work, tile & marble supply. They show an "ask about availability" note and are excluded from Service structured data.
 - [ ] **Confirm the industries** served (`industries.js`). The page currently asks visitors to confirm availability.
-- [ ] **Real projects.** All six portfolio entries are illustrative concepts built from stock photos and are labelled as such. Replace them with real projects and set `illustrative: false`.
-- [ ] **Review the four starter blog articles** and set `sample: false` to remove the "editorial sample" notice.
+- [ ] **Real projects.** The six entries in Design Ideas use stock photos. Add real projects (with `illustrative: false`) when photos are available.
+- [ ] **Read the eight blog guides** to make sure the advice matches how Haroon Marble works.
 - [ ] **Social media profiles**, if any (`site.socialProfiles`).
 - [ ] **Logo source file.** The logo is recreated in SVG from the hiring poster (`src/components/shared/LogoMark.js`, `public/images/logo-mark.svg`). Replace it with the original artwork if available.
 - [ ] Years of experience, project counts, certifications, warranties and testimonials: add only verified figures.

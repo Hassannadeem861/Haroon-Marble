@@ -1,12 +1,14 @@
-import { Info } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Info } from "lucide-react";
 import { FaqSection } from "@/components/proof/FaqSection";
 import { CtaBand } from "@/components/shared/CtaBand";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { RegistryImage } from "@/components/shared/RegistryImage";
 import { Reveal } from "@/components/shared/Reveal";
 import { industries } from "@/data/industries";
+import { getService } from "@/data/services";
 import { getDictionary } from "@/lib/dictionaries";
-import { pick } from "@/lib/i18n";
+import { localizePath, pick } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
@@ -69,6 +71,21 @@ export default async function IndustriesPage({ params }) {
                     </li>
                   ))}
                 </ul>
+                {industry.relatedServices ? (
+                  <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+                    {industry.relatedServices.map(getService).filter(Boolean).map((service) => (
+                      <li key={service.slug}>
+                        <Link
+                          href={localizePath(locale, `/services/${service.slug}`)}
+                          className="inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-charcoal underline decoration-gold underline-offset-4 hover:decoration-2"
+                        >
+                          {pick(service.title, locale)}
+                          <ArrowRight aria-hidden="true" className="size-4 rtl:rotate-180" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </Reveal>
           </section>

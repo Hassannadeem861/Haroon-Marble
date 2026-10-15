@@ -18,9 +18,10 @@ export function localeAlternates(locale, path = "/") {
 /**
  * Build page metadata with consistent canonical, hreflang, Open Graph and
  * Twitter tags. `title` is the page title without the brand suffix (the root
- * layout's title template adds it) unless `absoluteTitle` is set.
+ * layout's title template adds it) unless `absoluteTitle` is set. `noIndex`
+ * marks pages that must not appear in search results yet.
  */
-export function buildMetadata({ locale, path = "/", title, description, absoluteTitle = false, image, type = "website", publishedTime }) {
+export function buildMetadata({ locale, path = "/", title, description, absoluteTitle = false, image, type = "website", publishedTime, noIndex = false }) {
   // Paths like /favicon.ico reach [locale] routes; answer them with a 404 instead of an error.
   if (!hasLocale(locale)) notFound();
   const alternates = localeAlternates(locale, path);
@@ -31,6 +32,8 @@ export function buildMetadata({ locale, path = "/", title, description, absolute
     title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates,
+    // Pages awaiting business confirmation stay out of search results but keep their links followable.
+    ...(noIndex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       type,
       url: alternates.canonical,

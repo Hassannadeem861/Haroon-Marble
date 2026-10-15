@@ -1,12 +1,10 @@
 import { CountUp } from "@/components/proof/CountUp";
-import { SampleBadge } from "@/components/proof/SampleBadge";
 import { Reveal } from "@/components/shared/Reveal";
-import { getProofItems, stats } from "@/data/socialProof";
+import { stats as items } from "@/data/socialProof";
 import { pick } from "@/lib/i18n";
 
-/** Hidden until real figures are added to src/data/socialProof.js (samples show in development only). */
+/** Hidden until real figures are added to src/data/socialProof.js. */
 export function StatsSection({ locale, dict }) {
-  const { items, isSample } = getProofItems(stats);
   if (!items.length) return null;
 
   return (
@@ -15,7 +13,6 @@ export function StatsSection({ locale, dict }) {
         <h2 id="stats-heading" className="sr-only">
           {dict.proof.statsHeading}
         </h2>
-        {isSample ? <SampleBadge label={dict.proof.sampleBadge} /> : null}
         <Reveal stagger as="dl" className="grid grid-cols-2 gap-y-10 lg:grid-cols-4">
           {items.map((stat) => (
             <div

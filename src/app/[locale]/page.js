@@ -85,7 +85,7 @@ export default async function HomePage({ params }) {
             id="projects-heading"
             eyebrow={home.projects.eyebrow}
             title={home.projects.title}
-            text={dict.common.illustrativeNote}
+            text={home.projects.text}
             linkHref={localizePath(locale, "/portfolio")}
             linkLabel={dict.common.viewPortfolio}
           />

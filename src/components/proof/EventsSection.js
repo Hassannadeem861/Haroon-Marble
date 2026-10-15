@@ -1,22 +1,19 @@
 import { CalendarDays, MapPin } from "lucide-react";
-import { SampleBadge } from "@/components/proof/SampleBadge";
 import { RegistryImage } from "@/components/shared/RegistryImage";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { events, getProofItems } from "@/data/socialProof";
+import { events as items } from "@/data/socialProof";
 import { formatDate } from "@/lib/format";
 import { pick } from "@/lib/i18n";
 
-/** Hidden until real events are added to src/data/socialProof.js (samples show in development only). */
+/** Hidden until real events are added to src/data/socialProof.js. */
 export function EventsSection({ locale, dict }) {
-  const { items, isSample } = getProofItems(events);
   if (!items.length) return null;
   const copy = dict.proof.events;
 
   return (
     <section aria-labelledby="events-heading" className="py-20 md:py-28">
       <div className="container-page">
-        {isSample ? <SampleBadge label={dict.proof.sampleBadge} /> : null}
         <SectionHeading id="events-heading" eyebrow={copy.eyebrow} title={copy.title} />
         <Reveal stagger as="ul" className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((event) => (

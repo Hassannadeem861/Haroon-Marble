@@ -105,12 +105,10 @@ export function Footer({ locale, dict }) {
           <p>
             © {COPYRIGHT_YEAR} <span lang="en">{site.name}</span>. {dict.footer.rights}
           </p>
-          <p className="flex flex-wrap gap-x-4 gap-y-1">
-            <span>{dict.footer.stockNotice}</span>
-            <Link href={localizePath(locale, "/image-credits")} className={linkClass}>
-              {dict.common.photoCredits}
-            </Link>
-          </p>
+          {/* Kept because two photos are CC BY licensed, which requires attribution. */}
+          <Link href={localizePath(locale, "/image-credits")} className={linkClass}>
+            {dict.common.photoCredits}
+          </Link>
         </div>
       </div>
     </footer>

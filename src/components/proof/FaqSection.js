@@ -1,5 +1,4 @@
 import { MessageCircle } from "lucide-react";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -7,26 +6,19 @@ import { faqs } from "@/data/faqs";
 import { whatsappHref } from "@/data/site";
 import { pick } from "@/lib/i18n";
 
-/** Page-specific FAQs (from src/data/faqs.js) with matching FAQPage structured data. */
-export function FaqSection({ locale, dict, page }) {
-  const items = faqs[page] ?? [];
+/**
+ * Visible FAQs for a page: `items` when given (e.g. a service landing page),
+ * otherwise the page group from src/data/faqs.js. No FAQPage structured data:
+ * Google limits FAQ rich results to government and health sites, and several
+ * questions are shared between pages.
+ */
+export function FaqSection({ locale, dict, page, items: pageItems }) {
+  const items = pageItems ?? faqs[page] ?? [];
   if (!items.length) return null;
   const copy = dict.proof.faq;
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    inLanguage: locale,
-    mainEntity: items.map((item) => ({
-      "@type": "Question",
-      name: pick(item.q, locale),
-      acceptedAnswer: { "@type": "Answer", text: pick(item.a, locale) },
-    })),
-  };
-
   return (
     <section aria-labelledby="faq-heading" className="border-t border-border py-20 md:py-28">
-      <JsonLd data={schema} />
       <div className="container-page grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <SectionHeading id="faq-heading" eyebrow={copy.eyebrow} title={copy.title} />

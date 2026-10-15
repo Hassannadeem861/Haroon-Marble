@@ -1,12 +1,11 @@
 // Services offered by Haroon Marble.
 //
-// verified: true  -> confirmed by the business's own material (the "Kam ka kaam"
-//                    section of the Haroon Marble hiring poster: modelling,
-//                    designing, pattern planning and proper fixing of tiles/marble).
-// verified: false -> a likely offering that the business has NOT yet confirmed.
-//                    These render with an "ask about availability" note and are
-//                    excluded from Service structured data.
-//                    TODO(client): confirm or remove each unverified service.
+// verified: true  -> confirmed by the business (the hiring poster's "Kam ka kaam"
+//                    section, and the owner's confirmation in October 2026 of
+//                    cladding, polishing/restoration, staircases and supply).
+// verified: false -> an offering the business has NOT confirmed. It renders with
+//                    an "ask about availability" note, is excluded from Service
+//                    structured data, and is noindexed and left out of the sitemap.
 
 export const services = [
   {
@@ -189,14 +188,95 @@ export const services = [
     },
   },
   {
+    // Bathroom and kitchen work is tile and marble fixing (confirmed), applied
+    // to the two rooms people most often renovate.
+    slug: "bathroom-tile-and-marble-installation",
+    verified: true,
+    icon: "Droplets",
+    image: "bathroomShower",
+    title: { en: "Bathroom Tile & Marble Installation", ur: "باتھ روم ٹائل اور ماربل کی تنصیب" },
+    summary: {
+      en: "Bathroom floors, walls and showers tiled with slip-aware finishes, proper falls to the drain and neat cuts around every fitting.",
+      ur: "باتھ روم کے فرش، دیواریں اور شاور، پھسلن سے محفوظ فنش، نالی کی طرف درست ڈھلوان اور ہر فٹنگ کے گرد صاف کٹنگ کے ساتھ۔",
+    },
+    body: {
+      en: [
+        "A bathroom is the hardest-working room to tile. Water, steam and cleaning products test every joint, and the room is full of awkward details: drains, the WC, the basin, taps, niches and the shower screen. Most of what goes wrong in a bathroom comes from these details being worked out on the day instead of in advance.",
+        "We measure the room, plan where every joint and cut will fall, and agree the floor and wall layout with you in 2D/3D before fixing begins. Floors are set with a fall towards the drain, wall joints are lined up with the floor where the design calls for it, and every edge is finished cleanly so the room is easy to keep clean.",
+      ],
+      ur: [
+        "باتھ روم ٹائل لگانے کے لیے سب سے مشکل کمرہ ہے۔ پانی، بھاپ اور صفائی کی اشیا ہر جوڑ کو آزماتی ہیں، اور کمرہ مشکل تفصیلات سے بھرا ہوتا ہے: نالیاں، ڈبلیو سی، بیسن، نلکے، طاق اور شاور اسکرین۔ باتھ روم میں زیادہ تر خرابیاں اس وجہ سے ہوتی ہیں کہ یہ تفصیلات پہلے سے طے کرنے کے بجائے کام کے دن طے کی جاتی ہیں۔",
+        "ہم کمرے کی پیمائش کرتے ہیں، طے کرتے ہیں کہ ہر جوڑ اور کٹنگ کہاں آئے گی، اور فکسنگ شروع ہونے سے پہلے فرش اور دیوار کا لے آؤٹ 2D/3D میں آپ کے ساتھ طے کرتے ہیں۔ فرش نالی کی طرف ڈھلوان کے ساتھ لگایا جاتا ہے، ڈیزائن کے مطابق دیوار کے جوڑ فرش سے ملائے جاتے ہیں، اور ہر کنارہ صاف فنش کیا جاتا ہے تاکہ کمرہ آسانی سے صاف رہے۔",
+      ],
+    },
+    includes: {
+      en: [
+        "Measurement and 2D/3D layout of floor and walls",
+        "Floor tiling with a fall towards the drain",
+        "Wall tiling, including shower areas and niches",
+        "Marble or marble-look feature walls and vanity surrounds",
+        "Cutting around the WC, basin, drains and fittings",
+        "Grouting, edge trims and final clean",
+      ],
+      ur: [
+        "فرش اور دیواروں کی پیمائش اور 2D/3D لے آؤٹ",
+        "نالی کی طرف ڈھلوان کے ساتھ فرش کی ٹائلنگ",
+        "دیواروں کی ٹائلنگ، بشمول شاور ایریا اور طاق",
+        "ماربل یا ماربل نما نمایاں دیواریں اور وینٹی کے اطراف",
+        "ڈبلیو سی، بیسن، نالیوں اور فٹنگز کے گرد کٹنگ",
+        "گراؤٹنگ، کناروں کی ٹرم اور آخری صفائی",
+      ],
+    },
+  },
+  {
+    slug: "kitchen-tile-and-marble-installation",
+    verified: true,
+    icon: "ChefHat",
+    image: "kitchenGoldVein",
+    title: { en: "Kitchen Tile & Marble Installation", ur: "کچن ٹائل اور ماربل کی تنصیب" },
+    summary: {
+      en: "Kitchen splashbacks, walls and floors tiled to line up with your cabinets, with easy-clean surfaces and tidy cuts around sockets and windows.",
+      ur: "کچن کی دیوار (اسپلیش بیک)، دیواریں اور فرش، آپ کی کیبنٹس کی سیدھ میں، آسانی سے صاف ہونے والی سطحوں اور ساکٹس و کھڑکیوں کے گرد صاف کٹنگ کے ساتھ۔",
+    },
+    body: {
+      en: [
+        "In a kitchen the tiles sit right next to cabinets, worktops, sockets and windows, so small mistakes are easy to see. A splashback that ends with a thin sliver under the wall cabinets, or a floor tile line that runs crooked along the island, spoils an otherwise expensive kitchen.",
+        "We plan the splashback and floor around the cabinet layout, choose surfaces that cope with grease, heat and frequent cleaning, and fix them so lines are straight and cuts are balanced. Marble can be used where it will be appreciated, such as a feature splashback, with honest advice about how it behaves in a busy kitchen.",
+      ],
+      ur: [
+        "کچن میں ٹائلیں کیبنٹس، ورک ٹاپ، ساکٹس اور کھڑکیوں کے بالکل ساتھ لگتی ہیں، اس لیے چھوٹی غلطیاں بھی آسانی سے نظر آتی ہیں۔ اوپری کیبنٹس کے نیچے باریک پٹی پر ختم ہونے والا اسپلیش بیک، یا آئی لینڈ کے ساتھ ٹیڑھی چلتی فرش کی لائن ایک مہنگے کچن کو خراب کر دیتی ہے۔",
+        "ہم اسپلیش بیک اور فرش کی منصوبہ بندی کیبنٹس کے لے آؤٹ کے مطابق کرتے ہیں، چکنائی، حرارت اور بار بار صفائی برداشت کرنے والی سطحیں منتخب کرتے ہیں، اور انہیں اس طرح لگاتے ہیں کہ لائنیں سیدھی اور کٹنگ متوازن ہو۔ ماربل ان جگہوں پر استعمال کیا جا سکتا ہے جہاں وہ نمایاں ہو، جیسے نمایاں اسپلیش بیک، اور اس بارے میں دیانتدار مشورہ دیا جاتا ہے کہ مصروف کچن میں یہ کیسا رہتا ہے۔",
+      ],
+    },
+    includes: {
+      en: [
+        "Splashback layout planned around cabinets and sockets",
+        "Wall and splashback tiling",
+        "Kitchen floor tiling, including around islands",
+        "Marble feature splashbacks",
+        "Edge trims and clean finishes at worktops",
+        "Grouting suited to grease and frequent cleaning",
+      ],
+      ur: [
+        "کیبنٹس اور ساکٹس کے مطابق اسپلیش بیک کا لے آؤٹ",
+        "دیوار اور اسپلیش بیک کی ٹائلنگ",
+        "کچن کے فرش کی ٹائلنگ، بشمول آئی لینڈ کے اطراف",
+        "ماربل کے نمایاں اسپلیش بیک",
+        "ورک ٹاپ کے پاس کناروں کی ٹرم اور صاف فنش",
+        "چکنائی اور بار بار صفائی کے مطابق گراؤٹنگ",
+      ],
+    },
+  },
+  {
+    // Marble flooring is marble fixing (confirmed by the business) on floors.
     slug: "marble-flooring",
-    verified: false,
+    verified: true,
     icon: "Square",
     image: "elevatorLobby",
-    title: { en: "Marble Flooring", ur: "ماربل فلورنگ" },
+    title: { en: "Marble Flooring Installation", ur: "ماربل فلورنگ کی تنصیب" },
     summary: {
-      en: "Marble floors for homes and commercial spaces, planned for traffic, slip resistance and long-term care.",
-      ur: "گھروں اور کمرشل جگہوں کے لیے ماربل کے فرش، آمد و رفت، پھسلن سے بچاؤ اور طویل مدتی دیکھ بھال کو مدنظر رکھ کر۔",
+      en: "Marble floors laid flat and level, with the finish, layout and vein direction planned for how each room is used.",
+      ur: "ہموار اور لیول ماربل فرش، جن کا فنش، لے آؤٹ اور دھاریوں کی سمت ہر کمرے کے استعمال کے مطابق طے کی جاتی ہے۔",
     },
     body: {
       en: [
@@ -215,7 +295,7 @@ export const services = [
   },
   {
     slug: "wall-cladding-and-feature-walls",
-    verified: false,
+    verified: true,
     icon: "PanelsTopLeft",
     image: "bathroomMarbleWalls",
     title: { en: "Wall Cladding & Feature Walls", ur: "دیواری کلیڈنگ اور نمایاں دیواریں" },
@@ -240,7 +320,7 @@ export const services = [
   },
   {
     slug: "marble-polishing-and-restoration",
-    verified: false,
+    verified: true,
     icon: "Sparkles",
     image: "marbleWhite",
     title: { en: "Marble Polishing & Restoration", ur: "ماربل پالشنگ اور بحالی" },
@@ -265,7 +345,7 @@ export const services = [
   },
   {
     slug: "staircases-and-custom-marble-work",
-    verified: false,
+    verified: true,
     icon: "Footprints",
     image: "staircaseStone",
     title: { en: "Staircases & Custom Marble Work", ur: "سیڑھیاں اور خصوصی ماربل کام" },
@@ -290,7 +370,7 @@ export const services = [
   },
   {
     slug: "tile-and-marble-supply",
-    verified: false,
+    verified: true,
     icon: "Package",
     image: "marbleGold",
     title: { en: "Tile & Marble Supply", ur: "ٹائل اور ماربل کی فراہمی" },
@@ -320,3 +400,7 @@ export function getService(slug) {
 }
 
 export const verifiedServices = services.filter((service) => service.verified);
+
+// Unconfirmed services are reachable on the site but kept out of search
+// results and the sitemap until the business confirms them.
+export const isServiceIndexable = (service) => service.verified;

@@ -22,7 +22,9 @@ export async function generateMetadata({ params }) {
   return buildMetadata({ locale, path: "/about", title: dict.meta.about.title, description: dict.meta.about.description });
 }
 
-const craftImages = ["installLargeFormat", "installTrowel", "tilePattern"];
+// Material and detail shots only: photos of people working would read as
+// Haroon Marble's own team, which they are not.
+const craftImages = ["marbleGold", "installTrowel", "tilePattern"];
 
 export default async function AboutPage({ params }) {
   const { locale } = await params;
@@ -145,7 +147,6 @@ export default async function AboutPage({ params }) {
               </div>
             ))}
           </Reveal>
-          <p className="mt-4 text-xs text-muted-foreground">{dict.footer.stockNotice}</p>
         </div>
       </section>
 

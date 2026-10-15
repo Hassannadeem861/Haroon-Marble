@@ -1,8 +1,7 @@
 // Blog articles. Content blocks: { h2 }, { p }, { ul: [...] }.
 //
-// sample: true marks starter articles written for the launch. They show a short
-// "editorial sample" notice until Haroon Marble has reviewed and approved them.
-// TODO(client): review each article, then set sample: false.
+
+import { guidePosts } from "@/data/blogGuides";
 
 export const blogCategories = [
   { id: "choosing", label: { en: "Choosing materials", ur: "مٹیریل کا انتخاب" } },
@@ -10,14 +9,14 @@ export const blogCategories = [
   { id: "planning", label: { en: "Planning", ur: "منصوبہ بندی" } },
 ];
 
-export const blogPosts = [
+const starterPosts = [
   {
     slug: "choose-marble-for-your-home",
-    sample: true,
     category: "choosing",
     published: "2026-10-14",
     readingMinutes: 6,
     cover: "marbleGold",
+    relatedServices: ["marble-flooring", "marble-installation"],
     title: { en: "How to Choose Marble for Your Home", ur: "اپنے گھر کے لیے ماربل کا انتخاب کیسے کریں" },
     excerpt: {
       en: "Colour, veining, finish and where the stone will live: a practical way to narrow down the right marble for each room.",
@@ -90,21 +89,26 @@ export const blogPosts = [
   },
   {
     slug: "marble-vs-porcelain-tiles",
-    sample: true,
     category: "choosing",
     published: "2026-10-14",
-    readingMinutes: 5,
+    updated: "2026-10-15",
+    readingMinutes: 6,
     cover: "floorPolishedMarble",
-    title: { en: "Marble vs. Porcelain Tiles: Key Differences", ur: "ماربل بمقابلہ پورسلین ٹائلز: اہم فرق" },
+    title: { en: "Tiles vs Marble: Which Is Better for Your Floors?", ur: "ٹائلز بمقابلہ ماربل: آپ کے فرش کے لیے کون سا بہتر ہے؟" },
     excerpt: {
-      en: "Natural stone or a manufactured tile that looks like it? How the two compare on looks, durability, maintenance and installation.",
-      ur: "قدرتی پتھر یا اس جیسی دکھنے والی تیار شدہ ٹائل؟ دونوں کا موازنہ: شکل، پائیداری، دیکھ بھال اور تنصیب۔",
+      en: "Porcelain, ceramic, marble or granite? How tiles and natural stone compare on looks, durability, maintenance and installation, and where each one works best.",
+      ur: "پورسلین، سیرامک، ماربل یا گرینائٹ؟ ٹائلز اور قدرتی پتھر کا موازنہ: شکل، پائیداری، دیکھ بھال اور تنصیب، اور ہر ایک کہاں بہتر ہے۔",
     },
+    relatedServices: ["marble-flooring", "tile-installation"],
     content: {
       en: [
         { p: "Modern porcelain tiles can look remarkably like marble, so many people wonder whether natural stone is worth it. Neither is simply better. They suit different priorities." },
         { h2: "What they are" },
         { p: "Marble is a natural stone cut from quarried blocks. Its colour and veining are formed over a very long time, so every piece is unique. Porcelain is a dense ceramic tile made from refined clay fired at high temperature. Marble-look porcelain has a printed surface design that imitates stone." },
+        { h2: "Ceramic or porcelain?" },
+        { p: "Both are fired clay tiles. Porcelain is made from finer clay fired at a higher temperature, so it is denser, absorbs very little water and is harder wearing, which makes it the usual choice for floors. Ceramic tiles are lighter and easier to cut, and work well on walls, splashbacks and lightly used floors." },
+        { h2: "Where granite fits" },
+        { p: "Granite is also a natural stone, but it is much harder than marble and less affected by acids and scratches. It is often chosen for kitchen worktops, stairs and busy entrances. Its look is usually speckled or grainy rather than softly veined, so it offers a different character from marble." },
         { h2: "Appearance" },
         { p: "Marble has depth: light passes slightly into the surface and veins vary naturally from piece to piece. Porcelain designs are repeated across a set number of faces, so on large floors the pattern can occasionally repeat. Good porcelain is very convincing, especially in large formats." },
         { h2: "Durability and maintenance" },
@@ -131,6 +135,10 @@ export const blogPosts = [
         { p: "جدید پورسلین ٹائلز ماربل جیسی دکھ سکتی ہیں، اس لیے بہت سے لوگ سوچتے ہیں کہ کیا قدرتی پتھر واقعی ضروری ہے۔ دونوں میں سے کوئی بھی مطلقاً بہتر نہیں، دونوں مختلف ترجیحات کے لیے موزوں ہیں۔" },
         { h2: "یہ کیا ہیں" },
         { p: "ماربل کان سے نکالے گئے بلاکس سے کاٹا گیا قدرتی پتھر ہے۔ اس کا رنگ اور دھاریاں بہت طویل عرصے میں بنتی ہیں، اس لیے ہر ٹکڑا منفرد ہوتا ہے۔ پورسلین ایک گھنی سیرامک ٹائل ہے جو صاف کی گئی مٹی کو بہت زیادہ درجہ حرارت پر پکا کر بنائی جاتی ہے۔ ماربل نما پورسلین کی سطح پر پتھر جیسا ڈیزائن پرنٹ ہوتا ہے۔" },
+        { h2: "سیرامک یا پورسلین؟" },
+        { p: "دونوں پکی ہوئی مٹی کی ٹائلیں ہیں۔ پورسلین زیادہ باریک مٹی سے زیادہ درجہ حرارت پر بنتی ہے، اس لیے یہ زیادہ گھنی ہوتی ہے، بہت کم پانی جذب کرتی ہے اور زیادہ مضبوط ہوتی ہے، اسی لیے فرش کے لیے عام انتخاب ہے۔ سیرامک ٹائلیں ہلکی اور کاٹنے میں آسان ہوتی ہیں، اور دیواروں، اسپلیش بیک اور کم استعمال والے فرش کے لیے اچھی رہتی ہیں۔" },
+        { h2: "گرینائٹ کہاں موزوں ہے" },
+        { p: "گرینائٹ بھی قدرتی پتھر ہے، مگر ماربل سے کہیں زیادہ سخت ہے اور تیزاب اور خراشوں سے کم متاثر ہوتا ہے۔ اسے اکثر کچن ورک ٹاپ، سیڑھیوں اور مصروف داخلی راستوں کے لیے چنا جاتا ہے۔ اس کی شکل عموماً نرم دھاریوں کے بجائے دانے دار یا چتکبری ہوتی ہے، اس لیے یہ ماربل سے مختلف تاثر دیتا ہے۔" },
         { h2: "ظاہری شکل" },
         { p: "ماربل میں گہرائی ہوتی ہے: روشنی سطح میں ہلکا سا داخل ہوتی ہے اور دھاریاں ہر ٹکڑے میں قدرتی طور پر مختلف ہوتی ہیں۔ پورسلین کے ڈیزائن محدود چہروں پر دہرائے جاتے ہیں، اس لیے بڑے فرش پر کبھی کبھی ڈیزائن دہرایا ہوا نظر آ سکتا ہے۔ اچھی پورسلین خاص طور پر بڑے سائز میں بہت حقیقی لگتی ہے۔" },
         { h2: "پائیداری اور دیکھ بھال" },
@@ -157,11 +165,11 @@ export const blogPosts = [
   },
   {
     slug: "how-to-maintain-marble-flooring",
-    sample: true,
     category: "care",
     published: "2026-10-14",
     readingMinutes: 5,
     cover: "elevatorLobby",
+    relatedServices: ["marble-flooring"],
     title: { en: "How to Maintain Marble Flooring", ur: "ماربل فرش کی دیکھ بھال کیسے کریں" },
     excerpt: {
       en: "Simple daily habits and a few things to avoid that keep a marble floor looking its best for years.",
@@ -224,11 +232,11 @@ export const blogPosts = [
   },
   {
     slug: "select-tiles-for-kitchens-and-bathrooms",
-    sample: true,
     category: "planning",
     published: "2026-10-14",
     readingMinutes: 6,
     cover: "bathroomShower",
+    relatedServices: ["bathroom-tile-and-marble-installation", "kitchen-tile-and-marble-installation"],
     title: { en: "How to Select Tiles for Kitchens and Bathrooms", ur: "کچن اور باتھ روم کے لیے ٹائلز کا انتخاب کیسے کریں" },
     excerpt: {
       en: "Grip, water resistance, size, grout and layout: what to check before choosing tiles for the hardest-working rooms in the house.",
@@ -280,6 +288,9 @@ export const blogPosts = [
     },
   },
 ];
+
+// Newer guides live in blogGuides.js; the starter articles are listed first.
+export const blogPosts = [...starterPosts, ...guidePosts];
 
 export function getPost(slug) {
   return blogPosts.find((post) => post.slug === slug);
