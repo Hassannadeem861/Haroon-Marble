@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -9,11 +10,36 @@ import { cn } from "@/lib/utils";
  * Client-side search and category filter over the (small, static) list of
  * articles. Cards are server-rendered and passed in as `items[].card`.
  * When no filter is active the featured article is hidden here because it is
- * already shown above.
+ * already shown above. The category lives in the URL (?category=care) so the
+ * header menu can link straight to it.
  */
 export function BlogExplorer({ items, categories, featuredKey, labels }) {
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("all");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const requested = searchParams.get("category");
+  const category = categories.some((item) => item.id === requested) ? requested : "all";
+  const filterBar = useRef(null);
+  const changedHere = useRef(false);
+
+  // Arriving from the header menu with a category: bring the results into view.
+  useEffect(() => {
+    if (changedHere.current) {
+      changedHere.current = false;
+      return;
+    }
+    if (requested) filterBar.current?.scrollIntoView({ block: "start" });
+  }, [requested]);
+
+  function setCategory(id) {
+    changedHere.current = true;
+    const params = new URLSearchParams(searchParams);
+    if (id === "all") params.delete("category");
+    else params.set("category", id);
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+  }
 
   const term = query.trim().toLocaleLowerCase();
   const filtering = term !== "" || category !== "all";
@@ -26,7 +52,7 @@ export function BlogExplorer({ items, categories, featuredKey, labels }) {
 
   return (
     <div>
-      <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+      <div ref={filterBar} className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <div role="group" aria-label={labels.categoryLabel} className="flex flex-wrap gap-2">
           {[{ id: "all", label: labels.allCategories }, ...categories].map((item) => (
             <button

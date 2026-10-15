@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import gsap from "gsap";
 import { Flip } from "gsap/Flip";
 import { useGSAP } from "@gsap/react";
@@ -12,11 +13,28 @@ gsap.registerPlugin(Flip, useGSAP);
  * Category filter for the portfolio. Cards are rendered on the server and
  * passed in as `items[].card`; this component only decides which are shown.
  * GSAP Flip animates the re-flow so cards glide to their new positions.
+ * The active category lives in the URL (?category=kitchens), so the header
+ * menu can link straight to a filtered view and filtered views can be shared.
  */
 export function PortfolioExplorer({ filters, items, labels }) {
-  const [active, setActive] = useState("all");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const requested = searchParams.get("category");
+  const active = filters.some((filter) => filter.id === requested) ? requested : "all";
   const grid = useRef(null);
+  const filterBar = useRef(null);
   const flipState = useRef(null);
+  const changedHere = useRef(false);
+
+  // Arriving from the header menu with a category: bring the results into view.
+  useEffect(() => {
+    if (changedHere.current) {
+      changedHere.current = false;
+      return;
+    }
+    if (requested) filterBar.current?.scrollIntoView({ block: "start" });
+  }, [requested]);
 
   const visible = active === "all" ? items : items.filter((item) => item.categories.includes(active));
 
@@ -24,7 +42,12 @@ export function PortfolioExplorer({ filters, items, labels }) {
     if (id === active) return;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     flipState.current = reduceMotion ? null : Flip.getState(grid.current.querySelectorAll("[data-flip-id]"));
-    setActive(id);
+    changedHere.current = true;
+    const params = new URLSearchParams(searchParams);
+    if (id === "all") params.delete("category");
+    else params.set("category", id);
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
   }
 
   useGSAP(
@@ -44,7 +67,7 @@ export function PortfolioExplorer({ filters, items, labels }) {
 
   return (
     <div>
-      <div role="group" aria-label={labels.filterLabel} className="flex flex-wrap gap-2">
+      <div ref={filterBar} role="group" aria-label={labels.filterLabel} className="flex flex-wrap gap-2">
         {filters.map((filter) => (
           <button
             key={filter.id}

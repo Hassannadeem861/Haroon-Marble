@@ -1,15 +1,17 @@
 import { Phone } from "lucide-react";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
-import { NavLinks } from "@/components/layout/NavLinks";
+import { DesktopNav } from "@/components/layout/DesktopNav";
 import { ButtonLink } from "@/components/shared/ButtonLink";
 import { Logo } from "@/components/shared/Logo";
 import { mainNavigation } from "@/data/navigation";
 import { mailHref, site, telHref, whatsappHref } from "@/data/site";
 import { getDirection, localizePath } from "@/lib/i18n";
+import { buildNavMenus } from "@/lib/navMenus";
 
 export function Header({ locale, dict }) {
-  const items = mainNavigation.map((item) => ({ href: item.href, label: dict.nav[item.key] }));
+  const items = mainNavigation.map((item) => ({ href: item.href, label: dict.nav[item.key], menu: item.menu }));
+  const menus = buildNavMenus(locale, dict);
   // Contact is reached through the prominent CTA on desktop, so it is left out of the inline nav.
   const desktopItems = items.filter((item) => item.href !== "/contact");
 
@@ -18,9 +20,9 @@ export function Header({ locale, dict }) {
       <div className="container-page flex h-[var(--header-height)] items-center justify-between gap-4">
         <Logo locale={locale} />
 
-        <nav aria-label={dict.common.mainNavigation} className="hidden lg:block">
-          <NavLinks locale={locale} items={desktopItems} />
-        </nav>
+        <div className="hidden lg:block">
+          <DesktopNav locale={locale} items={desktopItems} menus={menus} label={dict.common.mainNavigation} />
+        </div>
 
         <div className="flex items-center gap-1 md:gap-2">
           <LanguageSwitcher
@@ -48,6 +50,7 @@ export function Header({ locale, dict }) {
             locale={locale}
             dir={getDirection(locale)}
             items={items}
+            menus={menus}
             contact={{ tel: telHref, mail: mailHref, whatsapp: whatsappHref() }}
             labels={{
               menu: dict.common.menu,

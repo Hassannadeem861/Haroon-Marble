@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { FaqSection } from "@/components/proof/FaqSection";
 import { ArrowRight } from "lucide-react";
@@ -86,18 +87,31 @@ export default async function BlogPage({ params }) {
           <h2 id="more-articles-heading" className="mb-8 text-3xl text-charcoal md:text-4xl">
             {copy.moreArticles}
           </h2>
-          <BlogExplorer
-            items={items}
-            featuredKey={featured.slug}
-            categories={blogCategories.map((category) => ({ id: category.id, label: pick(category.label, locale) }))}
-            labels={{
-              categoryLabel: copy.categoryLabel,
-              allCategories: copy.allCategories,
-              searchLabel: copy.searchLabel,
-              searchPlaceholder: copy.searchPlaceholder,
-              noResults: copy.noResults,
-            }}
-          />
+          {/* The explorer reads ?category= from the URL; the static fallback lists every guide. */}
+          <Suspense
+            fallback={
+              <ul className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+                {items
+                  .filter((item) => item.key !== featured.slug)
+                  .map((item) => (
+                    <li key={item.key}>{item.card}</li>
+                  ))}
+              </ul>
+            }
+          >
+            <BlogExplorer
+              items={items}
+              featuredKey={featured.slug}
+              categories={blogCategories.map((category) => ({ id: category.id, label: pick(category.label, locale) }))}
+              labels={{
+                categoryLabel: copy.categoryLabel,
+                allCategories: copy.allCategories,
+                searchLabel: copy.searchLabel,
+                searchPlaceholder: copy.searchPlaceholder,
+                noResults: copy.noResults,
+              }}
+            />
+          </Suspense>
         </div>
       </section>
 

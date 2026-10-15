@@ -8,6 +8,28 @@ const en = {
     blog: "Blog",
     contact: "Contact",
   },
+  navMenu: {
+    openSubmenu: "Show {label} menu",
+    byCategory: "Browse by category",
+    latestGuides: "Latest guides",
+    allServices: "View all services",
+    allIdeas: "Browse all design ideas",
+    allGuides: "Read all guides",
+    servicesPromo: {
+      title: "Not sure what you need?",
+      text: "Send us a few photos of your space and we will suggest the right service.",
+      cta: "Ask on WhatsApp",
+    },
+    ideasPromo: {
+      title: "Find ideas for your space",
+      text: "Kitchens, bathrooms, floors and feature walls, with the approach and materials for each.",
+    },
+    blogPromo: {
+      title: "Plan before you buy",
+      text: "Use the tile and marble calculator to estimate how much to order.",
+      cta: "Open the calculator",
+    },
+  },
   common: {
     requestQuote: "Request a Quote",
     exploreProjects: "Explore Design Ideas",

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { ProjectCard } from "@/components/cards/ProjectCard";
 import { FaqSection } from "@/components/proof/FaqSection";
 import { PortfolioExplorer } from "@/components/portfolio/PortfolioExplorer";
@@ -49,11 +50,22 @@ export default async function PortfolioPage({ params }) {
 
       <section className="py-16 md:py-24">
         <div className="container-page">
-          <PortfolioExplorer
-            filters={filters}
-            items={items}
-            labels={{ filterLabel: copy.filterLabel, resultsCount: copy.resultsCount, noResults: copy.noResults }}
-          />
+          {/* The explorer reads ?category= from the URL; the static fallback shows every idea. */}
+          <Suspense
+            fallback={
+              <ul className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+                {items.map((item) => (
+                  <li key={item.key}>{item.card}</li>
+                ))}
+              </ul>
+            }
+          >
+            <PortfolioExplorer
+              filters={filters}
+              items={items}
+              labels={{ filterLabel: copy.filterLabel, resultsCount: copy.resultsCount, noResults: copy.noResults }}
+            />
+          </Suspense>
         </div>
       </section>
 
