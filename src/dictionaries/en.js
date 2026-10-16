@@ -70,19 +70,19 @@ const en = {
   },
   meta: {
     home: {
-      title: "Haroon Marble | Tile & Marble Design, Modelling and Installation",
+      title: "Nadeem Marbles | Tile & Marble Design, Modelling and Installation",
       description:
-        "Haroon Marble plans, models and installs tile and marble surfaces with measured 2D/3D layouts, careful pattern work and clean finishing. Request a quote.",
+        "Nadeem Marbles plans, models and installs tile and marble surfaces with measured 2D/3D layouts, careful pattern work and clean finishing. Request a quote.",
     },
     about: {
       title: "About Us: Tile & Marble Specialists",
       description:
-        "Learn how Haroon Marble approaches tile and marble work: measured planning, client-led design, proper fixing and careful finishing.",
+        "Learn how Nadeem Marbles approaches tile and marble work: measured planning, client-led design, proper fixing and careful finishing.",
     },
     services: {
       title: "Tile & Marble Services",
       description:
-        "Tile and marble fixing, 2D/3D modelling, surface design and pattern planning by Haroon Marble. Explore our services and request a quote.",
+        "Tile and marble fixing, 2D/3D modelling, surface design and pattern planning by Nadeem Marbles. Explore our services and request a quote.",
     },
     portfolio: {
       title: "Design Ideas: Tile & Marble Kitchens, Bathrooms and Floors",
@@ -102,23 +102,23 @@ const en = {
     contact: {
       title: "Contact Us for a Tile or Marble Quote",
       description:
-        "Call, WhatsApp or email Haroon Marble about your tile or marble project, or send your project details through the enquiry form.",
+        "Call, WhatsApp or email Nadeem Marbles about your tile or marble project, or send your project details through the enquiry form.",
     },
     credits: {
       title: "Image Credits",
-      description: "Sources and licences for the photography used on the Haroon Marble website.",
+      description: "Sources and licences for the photography used on the Nadeem Marbles website.",
     },
   },
   home: {
     hero: {
       eyebrow: "Tiles | Marble | Quality Work",
       title: "Tile and marble surfaces, measured, designed and fixed with care.",
-      text: "From 2D/3D layouts based on your site measurements to the final clean joint, Haroon Marble plans and installs floors and walls that look right and last.",
+      text: "From 2D/3D layouts based on your site measurements to the final clean joint, Nadeem Marbles plans and installs floors and walls that look right and last.",
     },
     intro: {
       eyebrow: "What we do",
       title: "Four disciplines behind every finished surface.",
-      text: "A beautiful floor or wall is the result of decisions made long before installation. Haroon Marble brings modelling, design, pattern planning and proper fixing together, so each step supports the next.",
+      text: "A beautiful floor or wall is the result of decisions made long before installation. Nadeem Marbles brings modelling, design, pattern planning and proper fixing together, so each step supports the next.",
     },
     services: {
       eyebrow: "Services",
@@ -172,7 +172,7 @@ const en = {
     commitments: {
       eyebrow: "How we work",
       title: "Standards we hold our team to.",
-      text: "These are the standards Haroon Marble sets for everyone who works on a project.",
+      text: "These are the standards Nadeem Marbles sets for everyone who works on a project.",
     },
     blog: {
       eyebrow: "Guides",
@@ -188,13 +188,13 @@ const en = {
     hero: {
       eyebrow: "About us",
       title: "A tile and marble business built on planning and proper workmanship.",
-      text: "Haroon Marble works with tiles and marble, bringing together measured modelling, thoughtful design, careful pattern work and proper fixing.",
+      text: "Nadeem Marbles works with tiles and marble, bringing together measured modelling, thoughtful design, careful pattern work and proper fixing.",
     },
     story: {
       eyebrow: "Who we are",
       title: "Quality work is a standard, not a slogan.",
       paragraphs: [
-        "Haroon Marble is a tiles and marble company focused on doing the work properly, from the first measurement to the final clean. Our name carries a simple promise: tiles, marble and quality work.",
+        "Nadeem Marbles is a tiles and marble company focused on doing the work properly, from the first measurement to the final clean. Our name carries a simple promise: tiles, marble and quality work.",
         "Every project is different, so we start by understanding the space and what you need from it. We then measure, model and plan the layout before any material is cut, so the finished surface is the one you agreed on.",
       ],
     },
@@ -202,8 +202,8 @@ const en = {
       eyebrow: "Leadership",
       title: "Meet the founder",
       paragraphs: [
-        "Haroon Marble is led by its founder, who sets the standards for planning, design and workmanship across the team.",
-        "When you contact Haroon Marble, you speak directly with the business about your project.",
+        "Nadeem Marbles is led by its founder, who sets the standards for planning, design and workmanship across the team.",
+        "When you contact Nadeem Marbles, you speak directly with the business about your project.",
       ],
     },
     pillars: {
@@ -227,7 +227,7 @@ const en = {
       text: "Each service below can be taken on its own or combined into a complete design-and-install project.",
     },
     coreTitle: "Core services",
-    coreText: "The disciplines at the heart of Haroon Marble's work.",
+    coreText: "The disciplines at the heart of Nadeem Marbles' work.",
     additionalTitle: "Additional services",
     additionalText: "Related work we can discuss for your project. Please contact us to confirm availability.",
     includesTitle: "What this includes",
@@ -353,16 +353,16 @@ const en = {
       errorTitle: "Your enquiry could not be sent",
       errorText: "Something went wrong while sending. Please try again, or contact us directly by phone, WhatsApp or email.",
       tryAgain: "Try again",
-      messageIntro: "Hello Haroon Marble, I would like to enquire about a project.",
+      messageIntro: "Hello Nadeem Marbles, I would like to enquire about a project.",
       subject: "Project enquiry from the website",
     },
   },
   proof: {
-    statsHeading: "Haroon Marble in numbers",
+    statsHeading: "Nadeem Marbles in numbers",
     whyChoose: {
       eyebrow: "Why choose us",
       title: "Careful planning, clean workmanship.",
-      text: "What you can expect when Haroon Marble works on your floors and walls.",
+      text: "What you can expect when Nadeem Marbles works on your floors and walls.",
     },
     testimonials: {
       eyebrow: "Client testimonials",

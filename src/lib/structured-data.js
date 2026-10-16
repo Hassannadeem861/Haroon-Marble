@@ -15,7 +15,7 @@ export function organizationSchema(locale) {
     "@id": ORGANIZATION_ID,
     name: site.name,
     url: absoluteUrl(localizePath(locale)),
-    logo: absoluteUrl("/images/logo-mark.png"),
+    logo: absoluteUrl("/images/logo-nadeem-marbles.webp"),
     image: absoluteUrl("/images/og-default.jpg"),
     slogan: pick(site.tagline, "en"),
     email: site.email,

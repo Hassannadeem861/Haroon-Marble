@@ -1,6 +1,6 @@
-# Haroon Marble website
+# Nadeem Marbles website
 
-Bilingual (English / Urdu) business website for **Haroon Marble**, a tiles and marble design and installation business.
+Bilingual (English / Urdu) business website for **Nadeem Marbles**, a tiles and marble design and installation business.
 _Tiles | Marble | Quality Work_
 
 Built with Next.js 16 (App Router, Cache Components), React 19, Tailwind CSS 4, shadcn/ui (Base UI, RTL-aware), GSAP and Lucide icons. All content is local JavaScript data, and every page is prerendered as static HTML.
@@ -71,24 +71,24 @@ The site has no backend, so by default the form never sends anything itself. Aft
 
 Direct email delivery (optional): create a free access key at [web3forms.com](https://web3forms.com) using the business email, then set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` in Vercel and redeploy. The form then posts to Web3Forms and shows success only when the service confirms delivery; on failure it shows an error with direct contact options. Web3Forms access keys are designed to be public (they only allow sending to the registered email). Check its current free-plan limits on its pricing page before relying on it, and send a test enquiry after deploying.
 
-## Before publishing: information needed from Haroon Marble
+## Before publishing: information needed from Nadeem Marbles
 
 Nothing below was invented. Each item is hidden or clearly labelled until supplied.
 
-- [ ] **Owner's name** and preferred title (`site.owner` in `src/data/site.js`). The About page currently says "Founder, Haroon Marble".
-- [ ] **Confirm the owner portrait.** `public/images/owner-portrait.webp` is the generated portrait supplied for the project. Confirm the subject approves it and that it is an accurate likeness, or replace it with a real photograph.
-- [ ] **Confirm WhatsApp** is active on +92 303 0291757.
+- [ ] **Owner's name** and preferred title (`site.owner` in `src/data/site.js`). The About page currently says "Founder, Nadeem Marbles".
+- [ ] **Confirm the owner portrait.** `public/images/founder-portrait.webp` is the portrait supplied for the project. Confirm the subject approves it and that it is an accurate likeness, or replace it with a real photograph.
+- [ ] **Confirm WhatsApp** is active on +92 316 4593747 (calls go to +92 315 1283438).
 - [ ] **Business address, opening hours and service areas.** Once added to `site.js`, they can be shown on the Contact page and added to structured data (a `LocalBusiness` type needs an address).
 - [ ] **Confirm the industries** served (`industries.js`). The page currently asks visitors to confirm availability.
 - [ ] **Real projects.** The six entries in Design Ideas use stock photos. Add real projects (with `illustrative: false`) when photos are available.
-- [ ] **Read the eight blog guides** to make sure the advice matches how Haroon Marble works.
+- [ ] **Read the eight blog guides** to make sure the advice matches how Nadeem Marbles works.
 - [ ] **Social media profiles**, if any (`site.socialProfiles`).
 - [ ] **Logo source file.** The logo is recreated in SVG from the hiring poster (`src/components/shared/LogoMark.js`, `public/images/logo-mark.svg`). Replace it with the original artwork if available.
 - [ ] Years of experience, project counts, certifications, warranties and testimonials: add only verified figures.
 
 ## Images
 
-Photos in `public/images/stock/` come from Unsplash (Unsplash License) and two from Wikimedia Commons (CC BY 2.0 and CC BY 3.0, which require attribution). Every credit is listed on the `/image-credits` page, generated from `src/data/images.js`. None of them shows Haroon Marble's own work. Replace them with authentic project photography over time, especially the portfolio, service and "craft" images.
+Photos in `public/images/stock/` come from Unsplash (Unsplash License) and two from Wikimedia Commons (CC BY 2.0 and CC BY 3.0, which require attribution). Every credit is listed on the `/image-credits` page, generated from `src/data/images.js`. None of them shows Nadeem Marbles' own work. Replace them with authentic project photography over time, especially the portfolio, service and "craft" images.
 
 ## Notes on technical choices
 

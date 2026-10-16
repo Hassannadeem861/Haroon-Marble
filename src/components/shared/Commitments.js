@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { commitments } from "@/data/company";
 import { pick } from "@/lib/i18n";
 
-/** Workmanship standards, taken from the standards Haroon Marble sets for its own team. */
+/** Workmanship standards, taken from the standards Nadeem Marbles sets for its own team. */
 export function Commitments({ locale, eyebrow, title, text }) {
   return (
     <section aria-labelledby="commitments-heading" className="py-20 md:py-28">

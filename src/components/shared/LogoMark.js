@@ -1,8 +1,7 @@
 import { cn } from "@/lib/utils";
 
-// Recreation of the Haroon Marble diamond mark: four tiles set on the diagonal,
-// three gold and one charcoal (left). On dark backgrounds the charcoal tile is
-// drawn as a gold outline so the mark keeps its four-tile shape.
+// The Nadeem Marbles diamond mark: four tiles set on the diagonal, three solid
+// gold and one (left) drawn as a gold outline, as in the brand logo.
 const TILE = 22;
 const tiles = [
   { cx: 50, cy: 26, tone: "gold" },
@@ -23,9 +22,9 @@ export function LogoMark({ onDark = false, className }) {
           <polygon
             key={`${tile.cx}-${tile.cy}`}
             points={points(tile)}
-            fill={onDark ? "none" : "var(--brand-charcoal)"}
-            stroke={onDark ? "var(--brand-gold)" : "none"}
-            strokeWidth={onDark ? 2.5 : 0}
+            fill="none"
+            stroke={onDark ? "var(--brand-gold)" : "var(--brand-gold-deep)"}
+            strokeWidth={2.5}
           />
         ),
       )}

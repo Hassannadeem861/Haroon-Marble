@@ -1,4 +1,4 @@
-// Services offered by Haroon Marble.
+// Services offered by Nadeem Marbles.
 //
 // verified: true  -> confirmed by the business (the hiring poster's "Kam ka kaam"
 //                    section, and the owner's confirmation in October 2026 of

@@ -1,4 +1,4 @@
-// Sectors Haroon Marble can plan surfaces for. These describe typical surface
+// Sectors Nadeem Marbles can plan surfaces for. These describe typical surface
 // requirements only; they make no claim about past projects in each sector.
 // TODO(client): confirm which sectors the business actively serves.
 

@@ -1,4 +1,4 @@
-// Company content derived from Haroon Marble's own material (the hiring poster):
+// Company content derived from Nadeem Marbles' own material (the hiring poster):
 // its four areas of work and the standards it sets for its team. No figures,
 // awards, dates or testimonials are included because none have been supplied.
 

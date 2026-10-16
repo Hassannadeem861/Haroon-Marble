@@ -13,11 +13,11 @@ export function Logo({ locale, onDark = false, className }) {
       <LogoMark onDark={onDark} className="size-10 md:size-11" />
       <span lang="en" dir="ltr" className="flex flex-col font-sans leading-none">
         <span className={cn("text-[1.2rem] font-extrabold tracking-[0.06em]", onDark ? "text-ivory" : "text-charcoal")}>
-          HAROON
+          NADEEM
         </span>
         <span className={cn("mt-1 text-[0.68rem] font-semibold tracking-[0.42em]", onDark ? "text-gold" : "text-gold-deep")}>
           {" "}
-          MARBLE
+          MARBLES
         </span>
       </span>
     </Link>

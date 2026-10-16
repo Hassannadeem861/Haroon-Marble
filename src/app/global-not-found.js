@@ -6,7 +6,7 @@ import { manrope, cormorant } from "@/lib/fonts";
 // Shown for URLs that match no route at all (outside /en and /ur, which the
 // proxy normally redirects). Bilingual because the locale is unknown here.
 export const metadata = {
-  title: "Page not found | Haroon Marble",
+  title: "Page not found | Nadeem Marbles",
   robots: { index: false },
 };
 

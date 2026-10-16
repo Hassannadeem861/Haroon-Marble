@@ -1,7 +1,7 @@
 // Portfolio entries.
 //
 // IMPORTANT: every entry below is a DESIGN IDEA built from licensed stock
-// photography, not a completed Haroon Marble project. The section is presented
+// photography, not a completed Nadeem Marbles project. The section is presented
 // as "Design Ideas" (nav, headings, summaries "A concept for..."), so it must
 // never be renamed to imply finished work while these photos are used.
 // When real projects are available, add them with illustrative: false and

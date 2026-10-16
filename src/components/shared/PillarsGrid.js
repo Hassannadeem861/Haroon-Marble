@@ -3,7 +3,7 @@ import { Reveal } from "@/components/shared/Reveal";
 import { pillars } from "@/data/company";
 import { pick } from "@/lib/i18n";
 
-/** The four disciplines from Haroon Marble's own material: modelling, designing, pattern, proper fixing. */
+/** The four disciplines from Nadeem Marbles' own material: modelling, designing, pattern, proper fixing. */
 export function PillarsGrid({ locale }) {
   return (
     <Reveal stagger as="ol" className="grid border-t border-border sm:grid-cols-2 lg:grid-cols-4">

@@ -9,8 +9,8 @@
 const quote = {
   q: { en: "How do I get a quote?", ur: "کوٹیشن کیسے حاصل کروں؟" },
   a: {
-    en: "Call or WhatsApp +92 303 0291757, email marbleharoon@gmail.com, or use the enquiry form on the Contact page. Photos of your space and approximate measurements help us respond more accurately.",
-    ur: "\u2066+92 303 0291757\u2069 پر کال یا واٹس ایپ کریں، \u2066marbleharoon@gmail.com\u2069 پر ای میل کریں، یا رابطہ صفحے پر انکوائری فارم استعمال کریں۔ اپنی جگہ کی تصاویر اور اندازاً پیمائش سے ہم زیادہ درست جواب دے سکتے ہیں۔",
+    en: "Call +92 315 1283438, WhatsApp +92 316 4593747, email m.hassan.nadeem987@gmail.com, or use the enquiry form on the Contact page. Photos of your space and approximate measurements help us respond more accurately.",
+    ur: "\u2066+92 315 1283438\u2069 پر کال کریں، \u2066+92 316 4593747\u2069 پر واٹس ایپ کریں، \u2066m.hassan.nadeem987@gmail.com\u2069 پر ای میل کریں، یا رابطہ صفحے پر انکوائری فارم استعمال کریں۔ اپنی جگہ کی تصاویر اور اندازاً پیمائش سے ہم زیادہ درست جواب دے سکتے ہیں۔",
   },
 };
 
@@ -58,7 +58,7 @@ export const faqs = {
   home: [quote, modelling, price, areas],
   about: [
     {
-      q: { en: "What does Haroon Marble do?", ur: "ہارون ماربل کیا کرتا ہے؟" },
+      q: { en: "What does Nadeem Marbles do?", ur: "ندیم ماربلز کیا کرتا ہے؟" },
       a: {
         en: "We work with tiles and marble: 2D/3D modelling from site measurements, surface design, pattern and layout planning, and proper fixing and finishing.",
         ur: "ہم ٹائلز اور ماربل کے ساتھ کام کرتے ہیں: سائٹ کی پیمائش سے 2D/3D ماڈلنگ، سطح کا ڈیزائن، پیٹرن اور لے آؤٹ کی منصوبہ بندی، اور درست فکسنگ و فنشنگ۔",
