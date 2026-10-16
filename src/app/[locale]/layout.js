@@ -31,6 +31,8 @@ export async function generateMetadata({ params }) {
     title: { default: dict.meta.home.title, template: `%s | ${site.name}` },
     applicationName: site.name,
     robots: { index: true, follow: true },
+    // Google Search Console ownership check (renders <meta name="google-site-verification">).
+    verification: { google: "CWD7XdRq_sC7j4vcmQQtd0hfaCc4T-fyIiHNMH3Ykvs" },
   };
 }
 
