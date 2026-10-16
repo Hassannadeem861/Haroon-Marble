@@ -5,7 +5,7 @@
 export const site = {
   name: "Nadeem Marbles",
   tagline: { en: "Tiles | Marble | Quality Work", ur: "ٹائلز | ماربل | معیاری کام" },
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://haroon-marble.vercel.app").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://nadeem-marble.vercel.app").replace(/\/$/, ""),
 
   phone: "+923151283438",
   phoneDisplay: "+92 315 1283438",

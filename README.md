@@ -24,7 +24,7 @@ Copy `.env.example` to `.env.local` to set environment variables locally.
 
 1. Push this folder to a GitHub, GitLab or Bitbucket repository.
 2. In Vercel, choose **Add New → Project** and import the repository. The Next.js framework preset and default build settings are correct; no `vercel.json` is needed.
-3. Under **Environment Variables**, add `NEXT_PUBLIC_SITE_URL` with the final public URL, e.g. `https://haroonmarble.com` (no trailing slash). Without it, canonical URLs, hreflang tags and the sitemap point at `https://haroon-marble.vercel.app`.
+3. Under **Environment Variables**, add `NEXT_PUBLIC_SITE_URL` with the final public URL, e.g. `https://haroonmarble.com` (no trailing slash). Without it, canonical URLs, hreflang tags and the sitemap point at `https://nadeem-marble.vercel.app`.
 4. Deploy. If you add a custom domain later, update `NEXT_PUBLIC_SITE_URL` and redeploy.
 5. After going live, verify the domain in Google Search Console and submit `/sitemap.xml`.
 
